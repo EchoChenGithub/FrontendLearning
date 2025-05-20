@@ -87,8 +87,8 @@
 ## 📝 学习笔记与心得 (可选 - 强烈推荐)
 
 我计划在这里记录每日/每周的学习简报或笔记：
-*   **week2-day2 的学习简报 (2024-05-20 下午):** [CSS布局基础、Flexbox深入学习及多个案例实践](./learning_logs/week2-day2.md)
-*   **week2-day1 的学习简报 (2024-05-20 上午):** [CSS 结构伪类选择器、CSS 伪元素选择器、CSS 盒模型的边框、内外边距和圆角](./learning_logs/week2-day1.md)
+*   **week2-day2 的学习简报 (2024-05-20):** [CSS布局基础、Flexbox深入学习及多个案例实践](./learning_logs/week2-day2.md)
+*   **week2-day1 的学习简报 (2024-05-19):** [CSS 结构伪类选择器、CSS 伪元素选择器、CSS 盒模型的边框、内外边距和圆角](./learning_logs/week2-day1.md)
 *   **week1-day3 的学习简报 (2024-05-16):** [CSS基础选择器、特性、背景、显示模式及多个综合案例](./learning_logs/week1-day3.md)
 *   **week1-day2 的学习简报 (2024-05-15):** [HTML列表、表格、表单、布局标签、字符实体及“注册信息”案例](./learning_logs/week1-day2.md)
 *   **week1-day1 的学习简报 (2024-05-14):** [HTML基础、文本、图像、链接、多媒体及综合案例](./learning_logs/week1-day1.md)
