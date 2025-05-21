@@ -84,7 +84,7 @@
 *   **工具:** ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=flat-square&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=flat-square&logo=github&logoColor=white) ![VS Code](https://img.shields.io/badge/VS%20Code-0078d7.svg?style=flat-square&logo=visual-studio-code&logoColor=white)
 *   **其他:** Linux 命令行, 数据结构与算法
 
-## 📝 学习笔记与心得 (可选 - 强烈推荐)
+## 📝 学习笔记与心得
 
 我计划在这里记录每日/每周的学习简报或笔记：
 *   **week2-day2 的学习简报 (2024-05-20):** [CSS布局基础、Flexbox深入学习及多个案例实践](./learning_logs/week2-day2.md)
