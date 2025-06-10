@@ -8,7 +8,7 @@
 
 ### 第一阶段：前端基础夯实 (第1-3周)  🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜ 28%
 *   **学习课程:** 前端Web开发HTML5+CSS3+移动web视频教程 (黑马程序员)
-*   **课程进度** 🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜ 56%(112/200)
+*   **课程进度** 🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜ 56%(120/200)
 *   **主要模块:**
     *   [x] HTML5 核心概念与语义化标签
     *   [x] CSS3 基础 (选择器, 盒模型, 颜色, 字体)
@@ -99,7 +99,7 @@
 *   **项目名称:** [VChart]
 *   **我的角色/贡献:** [基于 VChart 开发象形图示例]
 *   **项目链接:** [https://visactor.io/vchart/demo/pictogram-chart/pictogram-mall]
-*   **我的PR/Commits (若有明确的):** [https://github.com/VisActor/VChart/pull/3681]
+*   **我的PR/Commits:** [https://github.com/VisActor/VChart/pull/3681]
 
 ---
 *本页面将作为我学习进展的动态记录。祝我好运！*# FrontendLearning
