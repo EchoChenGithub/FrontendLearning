@@ -68,12 +68,12 @@
     *   [黑马程序员前端基础-彻底征服JavaScript（知识精讲+贪吃蛇等项目案例）](https://www.bilibili.com/video/BV1tW41187vH?buvid=XUA0035AF28F3800F042A080C5A0813C5AB75&from_spmid=main.space-contribution.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=f96155d6-8eb0-4eee-a42e-3cdb80c5f9a5&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1746622857&unique_k=z0juG2m&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809) - 基础 js 和浏览器中的相关 API
     *   [前端教程_百度外卖项目实战开发](https://www.bilibili.com/video/BV1nx411E7Rh?buvid=XUA0035AF28F3800F042A080C5A0813C5AB75&from_spmid=main.space-contribution.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=e4d39fe9-0b29-427c-b1cb-cd80ece39ac8&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1746623176&unique_k=cKSPSif&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809) - 上手一个完整的实践项目
     *   [黑马程序员前端React视频教程，react零基础入门原理详解到好客租房项目实战](https://www.bilibili.com/video/BV1gh411U7JD/?buvid=XUA0035AF28F3800F042A080C5A0813C5AB75&from_spmid=main.space-search.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&p=7&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=c8f4b794-8758-4b92-8b05-1ec61d2b5667&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1746623276&unique_k=JT0Ermo&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809) - 学习前端框架 react
-*   **文档与书籍（待修改）:**
-    *   [MDN Web Docs](https://developer.mozilla.org/zh-CN/) - 我首选的 HTML, CSS, JS 参考文档
-    *   [React 官方文档 (中文版)](https://zh-hans.reactjs.org/)
-    *   《JavaScript高级程序设计 (第4版)》(红宝书) - 参考书籍
+*   **文档与书籍:**
+    *   《深入解析 CSS》 - 参考书籍 （阅读至第二章）
+
 *   **练习平台:（待修改）**
     *   GitHub - 用于版本控制和项目托管
+    *   WebStorm - 开发平台
 
 ## 🛠️ 我的技术栈 (持续更新中)
 
