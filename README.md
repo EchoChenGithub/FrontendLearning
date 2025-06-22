@@ -19,8 +19,8 @@
     *   [x] 移动端Web开发基础
     *   [ ] **练习项目1:** [小兔鲜儿首页] - [项目GitHub仓库链接 (稍后创建)]
             
-*   **学习课程:** [黑马程序员前端基础-彻底征服JavaScript（知识精讲+贪吃蛇等项目案例）](https://www.bilibili.com/video/BV1Y84y1L7Nn/?vd_source=524015b80a727597d3f2d480dff48809)
-*   **课程进度** ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ 0%(0/194)
+*   **学习课程:** 黑马程序员前端JavaScript入门到精通全套视频教程，javascript核心进阶ES6语法、API、js高级等基础知识和实战教程
+*   **课程进度** ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ 0%(0/200)
 *   **主要模块:**
     *   [ ] JavaScript 核心语法 (变量, 数据类型, 运算符, 控制流程)
     *   [ ] 函数与作用域
@@ -65,7 +65,7 @@
 *   **视频课程:**
     *   前端学习路线：https://juejin.cn/post/6982801495993352229?share_token=b8297561-05d9-4af0-a7b2-1bade8ad7d90
     *   [前端Web开发HTML5+CSS3+移动web视频教程 (黑马程序员)](https://www.bilibili.com/video/BV1kM4y127Li?buvid=XUA0035AF28F3800F042A080C5A0813C5AB75&from_spmid=main.space-contribution.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=79b92286-32ce-4f9a-b1a6-b97b8284da6b&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1746622820&unique_k=ZOPa0cf&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809) - 基础，学习怎么在浏览器中画东西
-    *   [黑马程序员前端基础-彻底征服JavaScript（知识精讲+贪吃蛇等项目案例）](https://www.bilibili.com/video/BV1tW41187vH?buvid=XUA0035AF28F3800F042A080C5A0813C5AB75&from_spmid=main.space-contribution.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=f96155d6-8eb0-4eee-a42e-3cdb80c5f9a5&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1746622857&unique_k=z0juG2m&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809) - 基础 js 和浏览器中的相关 API
+    *   [黑马程序员前端JavaScript入门到精通全套视频教程，javascript核心进阶ES6语法、API、js高级等基础知识和实战教程](https://www.bilibili.com/video/BV1Y84y1L7Nn/?vd_source=524015b80a727597d3f2d480dff48809) - 基础 js 和浏览器中的相关 API
     *   [前端教程_百度外卖项目实战开发](https://www.bilibili.com/video/BV1nx411E7Rh?buvid=XUA0035AF28F3800F042A080C5A0813C5AB75&from_spmid=main.space-contribution.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=e4d39fe9-0b29-427c-b1cb-cd80ece39ac8&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1746623176&unique_k=cKSPSif&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809) - 上手一个完整的实践项目
     *   [黑马程序员前端React视频教程，react零基础入门原理详解到好客租房项目实战](https://www.bilibili.com/video/BV1gh411U7JD/?buvid=XUA0035AF28F3800F042A080C5A0813C5AB75&from_spmid=main.space-search.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&p=7&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=c8f4b794-8758-4b92-8b05-1ec61d2b5667&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1746623276&unique_k=JT0Ermo&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809) - 学习前端框架 react
 *   **文档与书籍:**
