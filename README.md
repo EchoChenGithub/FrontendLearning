@@ -70,6 +70,8 @@
     *   [黑马程序员前端React视频教程，react零基础入门原理详解到好客租房项目实战](https://www.bilibili.com/video/BV1gh411U7JD/?buvid=XUA0035AF28F3800F042A080C5A0813C5AB75&from_spmid=main.space-search.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&p=7&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=c8f4b794-8758-4b92-8b05-1ec61d2b5667&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1746623276&unique_k=JT0Ermo&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809) - 学习前端框架 react
 *   **文档与书籍:**
     *   《深入解析 CSS》 - 参考书籍 （阅读至第二章）
+    *   《CSS 揭秘》
+    *   《你不知道的JS》
 
 *   **练习平台:**
     *   GitHub - 用于版本控制和项目托管
