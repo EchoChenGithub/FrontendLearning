@@ -20,14 +20,14 @@
     *   [x] **练习项目1:** [小兔鲜儿首页xtx-pc] - (https://github.com/EchoChenGithub/FrontendLearning/tree/main/xtx-pc)
             
 *   **学习课程:** 黑马程序员前端JavaScript入门到精通全套视频教程，javascript核心进阶ES6语法、API、js高级等基础知识和实战教程
-*   **课程进度** ██████░░░░ 57%(115/200)
+*   **课程进度** ███████░░░ 70%(136/200)
 *   **主要模块:**
     *   [x] JavaScript 核心语法 (变量, 数据类型, 运算符, 控制流程)
     *   [x] 函数与作用域
     *   [x] 对象与数组
     *   [x] DOM 操作与事件处理
     *   [ ] ES6+ 新特性 (let/const, 箭头函数, 模板字符串, 解构赋值, Promise, async/await)
-    *   [ ] 浏览器对象模型 (BOM) 与本地存储 (Local Storage)
+    *   [x] 浏览器对象模型 (BOM) 与本地存储 (Local Storage)
     *   [ ] HTTP 基础与 AJAX (fetch API)
     *   [ ] **练习项目2:** [百度外卖项目实战] - [项目GitHub仓库链接 (稍后创建)] | [在线演示链接 (稍后部署)]
 
@@ -88,6 +88,7 @@
 
 我计划在这里记录每日/每周的学习简报或笔记：
 *   <!-- 新的日志会添加到这里 -->
+*   **week5-day5 的学习简报 (2024-06-27):** [JS核心机制 (事件循环), BOM深入, 节点操作与本地存储及大型综合案例实践](./learning_logs/week5-day5.md)
 *   **week5-day4 的学习简报 (2024-06-26):** [DOM事件深入 (事件流, 事件对象, 事件委托) 与 核心理论及综合案例实践](./learning_logs/week5-day4.md)
 *   **week5-day3 的学习简报 (2024-06-25):** [CSS深度复习 (层叠上下文, 栅格系统原理, 动画与JS结合) 与 Web APIs入门 (DOM操作, 定时器, 事件监听初步)](./learning_logs/week5-day3.md)
 *   ......
