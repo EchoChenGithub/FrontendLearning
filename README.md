@@ -20,13 +20,13 @@
     *   [x] **练习项目1:** [小兔鲜儿首页xtx-pc] - (https://github.com/EchoChenGithub/FrontendLearning/tree/main/xtx-pc)
             
 *   **学习课程:** 黑马程序员前端JavaScript入门到精通全套视频教程，javascript核心进阶ES6语法、API、js高级等基础知识和实战教程
-*   **课程进度** ████████░░ 75%(150/200)
+*   **课程进度** █████████░ 90%(181/200)
 *   **主要模块:**
     *   [x] JavaScript 核心语法 (变量, 数据类型, 运算符, 控制流程)
     *   [x] 函数与作用域
     *   [x] 对象与数组
     *   [x] DOM 操作与事件处理
-    *   [ ] ES6+ 新特性 (let/const, 箭头函数, 模板字符串, 解构赋值, Promise, async/await)
+    *   [x] ES6+ 新特性 (let/const, 箭头函数, 模板字符串, 解构赋值, Promise, async/await)
     *   [x] 浏览器对象模型 (BOM) 与本地存储 (Local Storage)
     *   [ ] HTTP 基础与 AJAX (fetch API)
     *   [ ] **练习项目2:** [百度外卖项目实战] - [项目GitHub仓库链接 (稍后创建)] | [在线演示链接 (稍后部署)]
