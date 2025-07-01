@@ -20,7 +20,7 @@
     *   [x] **练习项目1:** [小兔鲜儿首页xtx-pc] - (https://github.com/EchoChenGithub/FrontendLearning/tree/main/xtx-pc)
             
 *   **学习课程:** 黑马程序员前端JavaScript入门到精通全套视频教程，javascript核心进阶ES6语法、API、js高级等基础知识和实战教程
-*   **课程进度** █████████░ 90%(181/200)
+*   **课程进度** █████████░ 90%(191/200)
 *   **主要模块:**
     *   [x] JavaScript 核心语法 (变量, 数据类型, 运算符, 控制流程)
     *   [x] 函数与作用域
@@ -88,6 +88,7 @@
 
 我计划在这里记录每日/每周的学习简报或笔记：
 *   <!-- 新的日志会添加到这里 -->
+*   **week6-day2 的学习简报 (2024-07-01):** [JS核心理论深度攻坚 (原型与原型链, this指向, 深浅拷贝)](./learning_logs/week6-day2.md)
 *   **week6-day1 的学习简报 (2024-06-30):** [JS进阶-上 (作用域, 解构, 箭头函数, 数组高阶方法, 面向对象与原型入门)](./learning_logs/week6-day1.md)
 *   **week5-day6 的学习简报 (2024-06-28):** [正则表达式入门, BOM操作, 并完成“小兔鲜注册登录”毕业级综合案例](./learning_logs/week5-day6.md)
 *   **week5-day5 的学习简报 (2024-06-27):** [JS核心机制 (事件循环), BOM深入, 节点操作与本地存储及大型综合案例实践](./learning_logs/week5-day5.md)
