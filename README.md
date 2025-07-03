@@ -91,7 +91,7 @@
 
 我计划在这里记录每日/每周的学习简报或笔记：
 *   <!-- 新的日志会添加到这里 -->
-*   **week6-day4 的学习简报 (2025-07-03):** [JS进阶收尾, "百度外卖"项目实践(响应式,Sass,Swiper)与React学习启动](./learning_logs/week6-day4.md)
+*   **week6-day4 的学习简报 (2025-07-03):** [JS进阶收尾, "百度外卖"项目实践(响应式,Sass,Swiper)与React首日：Vite环境搭建、JSX入门](./learning_logs/week6-day4.md)
 *   **week6-day3 的学习简报 (2025-07-02):** [JS进阶理论收尾 & "百度外卖"项目启动 (rem响应式布局, Sass工程化, Swiper应用)](./learning_logs/week6-day3.md)
 *   **week6-day2 的学习简报 (2025-07-01):** [JS核心理论深度攻坚 (原型与原型链, this指向, 深浅拷贝)](./learning_logs/week6-day2.md)
 *   **week6-day1 的学习简报 (2025-06-30):** [JS进阶-上 (作用域, 解构, 箭头函数, 数组高阶方法, 面向对象与原型入门)](./learning_logs/week6-day1.md)
