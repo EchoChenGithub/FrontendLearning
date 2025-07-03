@@ -6,7 +6,7 @@
 
 ## 🎯 两个月学习计划与当前进度
 
-### 第一阶段：前端基础夯实 (第1-3周)  🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜ 90%
+### 第一阶段：前端基础夯实 (第1-3周)  🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 95%
 *   **学习课程:** 前端Web开发HTML5+CSS3+移动web视频教程 (黑马程序员)
 *   **课程进度** ██████████ 100%(200/200)
 *   **主要模块:**
@@ -26,10 +26,10 @@
     *   [x] 函数与作用域
     *   [x] 对象与数组
     *   [x] DOM 操作与事件处理
-    *   [x] ES6+ 新特性 (let/const, 箭头函数, 模板字符串, 解构赋值, Promise, async/await)
+    *   [ ] ES6+ 新特性 (let/const, 箭头函数, 模板字符串, 解构赋值, Promise, async/await)
     *   [x] 浏览器对象模型 (BOM) 与本地存储 (Local Storage)
     *   [ ] HTTP 基础与 AJAX (fetch API)
-    *   [ ] **练习项目2:** [百度外卖项目实战] - [项目GitHub仓库链接 (稍后创建)] | [在线演示链接 (稍后部署)]
+    *   [x] **练习项目2:** [百度外卖项目实战] - [项目GitHub仓库链接 (稍后创建)] | [在线演示链接 (稍后部署)]
 
 ### 第二阶段：框架学习与项目实践 (第4-7周)⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ 0%
 *   **学习课程:** 黑马程序员前端React视频教程，react零基础入门原理详解到好客租房项目实战
@@ -91,20 +91,21 @@
 
 我计划在这里记录每日/每周的学习简报或笔记：
 *   <!-- 新的日志会添加到这里 -->
-*   **week6-day3 的学习简报 (2024-07-02):** [JS进阶理论收尾 & "百度外卖"项目启动 (rem响应式布局, Sass工程化, Swiper应用)](./learning_logs/week6-day3.md)
-*   **week6-day2 的学习简报 (2024-07-01):** [JS核心理论深度攻坚 (原型与原型链, this指向, 深浅拷贝)](./learning_logs/week6-day2.md)
-*   **week6-day1 的学习简报 (2024-06-30):** [JS进阶-上 (作用域, 解构, 箭头函数, 数组高阶方法, 面向对象与原型入门)](./learning_logs/week6-day1.md)
-*   **week5-day6 的学习简报 (2024-06-28):** [正则表达式入门, BOM操作, 并完成“小兔鲜注册登录”毕业级综合案例](./learning_logs/week5-day6.md)
-*   **week5-day5 的学习简报 (2024-06-27):** [JS核心机制 (事件循环), BOM深入, 节点操作与本地存储及大型综合案例实践](./learning_logs/week5-day5.md)
-*   **week5-day4 的学习简报 (2024-06-26):** [DOM事件深入 (事件流, 事件对象, 事件委托) 与 核心理论及综合案例实践](./learning_logs/week5-day4.md)
-*   **week5-day3 的学习简报 (2024-06-25):** [CSS深度复习 (层叠上下文, 栅格系统原理, 动画与JS结合) 与 Web APIs入门 (DOM操作, 定时器, 事件监听初步)](./learning_logs/week5-day3.md)
+*   **week6-day4 的学习简报 (2025-07-03):** [JS进阶收尾, "百度外卖"项目实践(响应式,Sass,Swiper)与React学习启动](./learning_logs/week6-day4.md)
+*   **week6-day3 的学习简报 (2025-07-02):** [JS进阶理论收尾 & "百度外卖"项目启动 (rem响应式布局, Sass工程化, Swiper应用)](./learning_logs/week6-day3.md)
+*   **week6-day2 的学习简报 (2025-07-01):** [JS核心理论深度攻坚 (原型与原型链, this指向, 深浅拷贝)](./learning_logs/week6-day2.md)
+*   **week6-day1 的学习简报 (2025-06-30):** [JS进阶-上 (作用域, 解构, 箭头函数, 数组高阶方法, 面向对象与原型入门)](./learning_logs/week6-day1.md)
+*   **week5-day6 的学习简报 (2025-06-28):** [正则表达式入门, BOM操作, 并完成“小兔鲜注册登录”毕业级综合案例](./learning_logs/week5-day6.md)
+*   **week5-day5 的学习简报 (2025-06-27):** [JS核心机制 (事件循环), BOM深入, 节点操作与本地存储及大型综合案例实践](./learning_logs/week5-day5.md)
+*   **week5-day4 的学习简报 (2025-06-26):** [DOM事件深入 (事件流, 事件对象, 事件委托) 与 核心理论及综合案例实践](./learning_logs/week5-day4.md)
+*   **week5-day3 的学习简报 (2025-06-25):** [CSS深度复习 (层叠上下文, 栅格系统原理, 动画与JS结合) 与 Web APIs入门 (DOM操作, 定时器, 事件监听初步)](./learning_logs/week5-day3.md)
 *   ......
-*   **week2-day3 的学习简报 (2024-05-21):** [项目实践："学成在线"首页制作 (HTML在线"首页制作 (HTML结构, CSS基础, Flexbox综合应用)](./learning_logs/week2-day3.md)
-*   **week2-day2 的学习简报 (2024-05-20):** [CSS布局基础、Flexbox深入学习及多个案例实践](./learning_logs/week2-day2.md)
-*   **week2-day1 的学习简报 (2024-05-19):** [CSS 结构伪类选择器、CSS 伪元素选择器、CSS 盒模型的边框、内外边距和圆角](./learning_logs/week2-day1.md)
-*   **week1-day3 的学习简报 (2024-05-16):** [CSS基础选择器、特性、背景、显示模式及多个综合案例](./learning_logs/week1-day3.md)
-*   **week1-day2 的学习简报 (2024-05-15):** [HTML列表、表格、表单、布局标签、字符实体及“注册信息”案例](./learning_logs/week1-day2.md)
-*   **week1-day1 的学习简报 (2024-05-14):** [HTML基础、文本、图像、链接、多媒体及综合案例](./learning_logs/week1-day1.md)
+*   **week2-day3 的学习简报 (2025-05-21):** [项目实践："学成在线"首页制作 (HTML在线"首页制作 (HTML结构, CSS基础, Flexbox综合应用)](./learning_logs/week2-day3.md)
+*   **week2-day2 的学习简报 (2025-05-20):** [CSS布局基础、Flexbox深入学习及多个案例实践](./learning_logs/week2-day2.md)
+*   **week2-day1 的学习简报 (2025-05-19):** [CSS 结构伪类选择器、CSS 伪元素选择器、CSS 盒模型的边框、内外边距和圆角](./learning_logs/week2-day1.md)
+*   **week1-day3 的学习简报 (2025-05-16):** [CSS基础选择器、特性、背景、显示模式及多个综合案例](./learning_logs/week1-day3.md)
+*   **week1-day2 的学习简报 (2025-05-15):** [HTML列表、表格、表单、布局标签、字符实体及“注册信息”案例](./learning_logs/week1-day2.md)
+*   **week1-day1 的学习简报 (2025-05-14):** [HTML基础、文本、图像、链接、多媒体及综合案例](./learning_logs/week1-day1.md)
 
 
 ## 🌱 我参与的开源项目
