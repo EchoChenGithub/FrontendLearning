@@ -1,0 +1,680 @@
+// 引入 normalize
+@import "normalize6.0.scss";
+// 引入 swiper 的 scss
+@import "../lib/swiper.min.scss";
+// 引入 base
+@import "base.scss";
+
+$base-font-size: 24;
+
+@function px2rem($px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+// 混入
+// 背景图居中
+@mixin bgc($url) {
+  background: url($url) no-repeat center / 100% 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+//背景图不设置居中
+@mixin bg($url) {
+  background: url($url) no-repeat center / 100% 100%;
+  position: absolute;
+}
+//居中，不设置背景图
+@mixin center() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+//设置宽高
+@mixin wh($w, $h) {
+  width: px2rem($w);
+  height: px2rem($h);
+}
+
+// 设置高度 100%
+html, body {
+  height: 100%;
+}
+
+//loading页
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffece9;
+  z-index: 2;
+  display: none;
+  .rider {
+    @include wh(154, 121);
+    @include bg("../images/loading/rider1_.png");
+    top: px2rem(233);
+    right: px2rem(108);
+  }
+  .progress {
+    @include wh(416, 20);
+    @include center();
+    background: #fc2e4d;
+    border: 2px solid #373838;
+    border-radius: px2rem(20);
+    top: px2rem(360);
+  }
+  .info {
+    @include wh(220, 28);
+    @include bgc("../images/loading/loading-txt.png");
+    top: px2rem(420);
+  }
+  .logo {
+    @include wh(162,39);
+    @include bgc("../images/loading/waimai-logo.png");
+    bottom: px2rem(118);
+  }
+  .copyright {
+    margin-top: px2rem(24);
+    font-size: 1rem;
+    color: #fc2e4d;
+    position: absolute;
+    bottom: px2rem(73);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+// 欢迎页
+.welcome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: deepskyblue;
+  z-index: 1;
+  display: none;
+  .info {
+    @include bgc("../images/page1/theme-title.png");
+    width: px2rem(397);
+    height: px2rem(224);
+    top: px2rem(42);
+    .hello  {
+      width: px2rem(70);
+      height: px2rem(75);
+      background: url(../images/page1/hello.png) no-repeat center;
+      background-size: 100% 100%;
+      position: absolute;
+      top: px2rem(20);
+      right: px2rem(8);
+    }
+  }
+  // 云
+  .cloud {
+    @include wh(640,673);
+    @include bgc("../images/page1/clouds.png");
+    bottom: 0;
+  }
+  // 草地
+  .grass1 {
+    @include wh(640,396);
+    @include bg("../images/page1/grass1.png");
+    bottom: 0;
+  }
+  // 熊笼
+  .bear-box {
+    @include wh(167, 279);
+    @include center();
+    bottom: px2rem(346);
+    .bear {
+      @include bg("../images/page1/rider2.png");
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .smoke {
+      @include wh(167, 32);
+      @include bg("../images/page1/jet1.png");
+      bottom: 0;
+    }
+  }
+  // 树
+ .trees {
+    @include wh(599, 71);
+    @include bgc("../images/page1/trees.png");
+    bottom: px2rem(352);
+ }
+  // 草2
+  .grass2 {
+    @include wh(640, 228);
+    @include bgc("../images/page1/grass2.png");
+    bottom: 0;
+  }
+  // 旋转的按钮
+  .rotate-btn-box {
+    @include wh(208, 208);
+    @include center();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: px2rem(86);
+    .btn {
+      @include wh(124, 113);
+      background: url(../images/page1/bear-btn-pre.png) no-repeat center / 100% 100%;
+    }
+    .circle1 {
+      @include wh(208, 208);
+      @include bg("../images/page1/circle1.png");
+      top: 0;
+      left: 0;
+    }
+    .circle2 {
+      @include wh(208, 208);
+      @include bg("../images/page1/circle2.png");
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+//swiper样式
+.swiper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: pink;
+}
+
+// 轮播页面
+// 轮播页面的公共样式
+.title {
+  color: #fff;
+  position: absolute;
+  top: px2rem(32);
+  left: px2rem(32);
+  padding-left: px2rem(20);
+  h3 {
+    font-size: px2rem(64);
+  }
+  p {
+    font-size: px2rem(24);
+  }
+  .line {
+    height: 100%;
+    width: px2rem(5);
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+// 轮播页面 1
+.page1 {
+  background-color: #BE8651;
+  // 轮播图
+  .scroll-page1 {
+    display: none;
+    .bg {
+      @include wh(576, 573);
+      @include bgc("../images/page2/bg1.png");
+      bottom: px2rem(252);
+    };
+    .person {
+      @include wh(439, 349);
+      @include bgc("../images/page2/front1.png");
+      bottom: px2rem(290);
+      z-index: 1;
+      .files {
+        background-image: url("../images/page2/papers.png");
+        background-size: px2rem(115) px2rem(114);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        @include wh(85, 50);
+        position: absolute;
+        bottom: px2rem(104);
+        left: px2rem(27);
+        .paper1 {
+          background-image: url("../images/page2/papers.png");
+          background-size: px2rem(115) px2rem(114);
+          background-repeat: no-repeat;
+          background-position: 0 px2rem(-32);
+          @include wh(86, 26);
+          position: absolute;
+          bottom: px2rem(45);
+          left: px2rem(-70);
+        }
+        .paper2 {
+          background-image: url("../images/page2/papers.png");
+          background-size: px2rem(115) px2rem(114);
+          background-repeat: no-repeat;
+          background-position: px2rem(-45) 0;
+          @include wh(64, 20);
+          position: absolute;
+          bottom: px2rem(80);
+          right: 0;
+        }
+      }
+    };
+    .message-container {
+      @include wh(363, 119);
+      @include bg("../images/page2/txt-bubbl.png");
+      bottom: px2rem(140);
+      right: px2rem(140);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      .info {
+        @include wh(220, 30);
+        @include bg("../images/page2/txt-work.png");
+      }
+    }
+  }
+  .scroll-page2 {
+    display: none;
+    .bg {
+      @include wh(582, 520);
+      @include bgc("../images/page2/bg2.png");
+      bottom: px2rem(252);
+    };
+    .person {
+      @include wh(436, 332);
+      @include bgc("../images/page2/relax.png");
+      bottom: px2rem(270);
+      z-index: 1;
+      .leg1 {
+        @include wh(113, 24);
+        @include bg("../images/page2/leg1.png");
+        bottom: px2rem(110);
+        left: px2rem(195);
+      }
+      .leg2 {
+        @include wh(85, 71);
+        @include bg("../images/page2/leg2.png");
+        bottom: px2rem(120);
+        left: px2rem(193);
+      }
+    };
+    .message-container {
+      @include wh(363, 119);
+      @include bg("../images/page2/txt-bubbl.png");
+      bottom: px2rem(140);
+      right: px2rem(140);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      .info {
+        @include wh(220, 30);
+        @include bg("../images/page2/txt-life.png");
+      }
+    }
+  }
+  .scroll-page3 {
+    //display: none;
+    .bg {
+      @include wh(561, 516);
+      @include bg("../images/page2/bg3.png");
+      bottom: px2rem(270);
+    };
+    .person {
+      @include wh(503, 229);
+      @include bgc("../images/page2/person.png");
+      bottom: px2rem(300);
+      z-index: 1;
+      .info1 {
+        @include wh(92, 83);
+        @include bg("../images/page2/word1.png");
+        bottom: px2rem(194);
+        left: px2rem(-7);
+      }
+      .info2 {
+        @include wh(115, 104);
+        @include bg("../images/page2/word2.png");
+        bottom: px2rem(245);
+        left: px2rem(115);
+      }
+      .info3 {
+        @include wh(77, 70);
+        @include bg("../images/page2/word3.png");
+        bottom: px2rem(220);
+        right: px2rem(130);
+      }
+      .info4 {
+        @include wh(79, 73);
+        @include bg("../images/page2/word4.png");
+        bottom: px2rem(230);
+        right: px2rem(12);
+      }
+    };
+    .message-container {
+      @include wh(363, 119);
+      @include bg("../images/page2/txt-bubbl.png");
+      bottom: px2rem(140);
+      right: px2rem(140);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      .info {
+        @include wh(220, 30);
+        @include bg("../images/page2/txt-res.png");
+      }
+    }
+  }
+  .bear {
+    @include wh(178, 134);
+    @include bg("../images/page2/bear1.png");
+    bottom: 0;
+    right: px2rem(38);
+    z-index: 1;
+  }
+  .sphere {
+    @include wh(640, 356);
+    @include bgc("../images/page2/sphere1.png");
+    bottom: 0;
+  }
+}
+// 轮播页面 2
+.page2 {
+  background-color: #EE4143;
+  .bg {
+    @include wh(592, 490);
+    @include bgc("../images/page3/bg4_.png");
+    bottom: px2rem(330);
+  }
+  .bear {
+    background-image: url("../images/page3/bear2.png");
+    background-size: px2rem(368) px2rem(427);
+    background-repeat: no-repeat;
+    background-position: px2rem(-103) px2rem(-96);
+    @include wh(227, 336);
+    @include center();
+    position: absolute;
+    bottom: px2rem(310);
+    z-index: 1;
+    .hand-left {
+      @include wh(74, 77);
+      @include bg("../images/page3/hand-left_.png");
+      top: px2rem(180);
+      left: px2rem(30);
+    }
+    .hand-right {
+      @include wh(74, 77);
+      @include bg("../images/page3/hand-right.png");
+      top: px2rem(180);
+      right: px2rem(30);
+    }
+    .happy {
+      @include wh(101, 102);
+      @include bg("../images/page3/face2.png");
+      top: px2rem(- 102);
+      right: px2rem(- 101 / 2);
+    }
+    .sad {
+      @include wh(102, 102);
+      @include bg("../images/page3/face1.png");
+      top: 0;
+      left: px2rem(- 102);
+    }
+  }
+  .table {
+    @include wh(514, 258);
+    @include bgc("../images/page3/table.png");
+    bottom: px2rem(140);
+    z-index: 1;
+  }
+  .foods {
+    @include wh(354, 152);
+    @include bgc("../images/page3/foods.png");
+    bottom: px2rem(330);
+    z-index: 1;
+  }
+  .sphere {
+    @include wh(640, 356);
+    @include bgc("../images/page3/sphere2.png");
+    bottom: 0;
+  }
+}
+// 轮播页面 3
+.page3 {
+  background-color: #DD8A03;
+  .bg {
+    @include wh(592, 580);
+    @include bgc("../images/page4/bg5.png");
+    bottom: px2rem(300);
+  }
+  .bear {
+    @include wh(206, 321);
+    @include bgc("../images/page4/bear3.png");
+    position: absolute;
+    bottom: px2rem(195);
+    z-index: 1;
+  }
+  .license {
+    @include wh(197,140);
+    @include bg("../images/page4/license.png");
+    bottom: px2rem(500);
+    left: px2rem(40);
+  }
+  .oil {
+    @include wh(205, 107);
+    @include bg("../images/page4/oil.png");
+    bottom: px2rem(660);
+    left: px2rem(225);
+  }
+  .evil {
+    @include wh(198, 163);
+    @include bg("../images/page4/evil2.png");
+    bottom: px2rem(480);
+    right: px2rem(30);
+  }
+  .sphere {
+    @include wh(640, 356);
+    @include bgc("../images/page4/sphere3.png");
+    bottom: 0;
+  }
+}
+// 轮播页面 4
+.page4 {
+  background-color: #3FA100;
+  .bg {
+    @include wh(588, 333);
+    @include bgc("../images/page5/bg6.png");
+    bottom: px2rem(300);
+  }
+  .bear {
+    @include wh(309, 325);
+    @include bgc("../images/page5/bear4.png");
+    position: absolute;
+    bottom: px2rem(170);
+    z-index: 1;
+  }
+  .card1 {
+    @include wh(160, 175);
+    @include bg("../images/page5/card1.png");
+    bottom: px2rem(435);
+    left: px2rem(32);
+  }
+  .card2 {
+    @include wh(161, 209);
+    @include bg("../images/page5/card2.png");
+    bottom: px2rem(530);
+    left: px2rem(240);
+  }
+  .card3 {
+    @include wh(167, 184);
+    @include bg("../images/page5/card3.png");
+    bottom: px2rem(420);
+    right: px2rem(45);
+  }
+  .sphere {
+    @include wh(640, 356);
+    @include bgc("../images/page5/sphere4.png");
+    bottom: 0;
+  }
+}
+// 轮播页面 5
+.page5 {
+  background-color: #0098CF;
+  .bg {
+    @include wh(594, 493);
+    @include bgc("../images/page6/bg7.png");
+    bottom: px2rem(300);
+  }
+  .cloud {
+    @include wh(432, 160);
+    @include bgc("../images/page6/weather-cloud.png");
+    bottom: px2rem(175+80+390);
+  }
+  .bear {
+    @include wh(230, 390);
+    @include bgc("../images/page6/rider2.png");
+    bottom: px2rem(175);
+    z-index: 1;
+    .smoke {
+      @include wh(114, 26);
+      @include bgc("../images/page6/shadow.png");
+      bottom: 0;
+    }
+  }
+  .sphere {
+    @include wh(640, 356);
+    @include bgc("../images/page6/sphere5.png");
+    bottom: 0;
+  }
+}
+// 轮播页面 6
+.page6 {
+  background-color: #B527A0;
+  .bg {
+    @include wh(588, 333);
+    @include bgc("../images/page7/bg8.png");
+    bottom: px2rem(300);
+  }
+  .bear {
+    @include wh(285, 328);
+    @include bgc("../images/page7/bear5.png");
+    bottom: px2rem(200);
+    z-index: 1;
+    .gift-box{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      /*
+      为了错开腿，不能转满 360度，假设转 350，每个转 29度
+      */
+      .gift1 {
+        @include wh(35, 29);
+        @include bgc("../images/page7/gift1.png");
+        transform: rotate(28deg) translateY(px2rem(240));
+      }
+      .gift2 {
+        @include wh(93, 79);
+        @include bgc("../images/page7/gift2.png");
+        transform: translateX(-50%) rotate(28*2deg) translateY(px2rem(240));
+      }
+      .gift3 {
+        @include wh(72, 64);
+        @include bgc("../images/page7/gift3.png");
+        transform: translateX(-50%) rotate(28*3deg) translateY(px2rem(240));
+      }
+      .gift4 {
+        @include wh(91, 73);
+        @include bgc("../images/page7/gift4.png");
+        transform: translateX(-50%) rotate(28*4deg) translateY(px2rem(240));
+      }
+      .gift5 {
+        @include wh(99, 65);
+        @include bgc("../images/page7/gift5.png");
+        transform: translateX(-50%) rotate(28*5deg) translateY(px2rem(240));
+      }
+      .gift6 {
+        @include wh(107, 80);
+        @include bgc("../images/page7/gift6.png");
+        transform: translateX(-50%) rotate(28*6deg) translateY(px2rem(240));
+      }
+      .gift7 {
+        @include wh(107, 80);
+        @include bgc("../images/page7/gift7.png");
+        transform: translateX(-50%) rotate(28*7deg) translateY(px2rem(240));
+      }
+      .gift8 {
+        @include wh(88, 64);
+        @include bgc("../images/page7/gift8.png");
+        transform: translateX(-50%) rotate(28*8deg) translateY(px2rem(240));
+      }
+      .gift9 {
+        @include wh(78, 50);
+        @include bgc("../images/page7/gift9.png");
+        transform: translateX(-50%) rotate(28*9deg) translateY(px2rem(240));
+      }
+      .gift10 {
+        @include wh(49, 37);
+        @include bgc("../images/page7/gift10.png");
+        transform: translateX(-50%) rotate(28*10deg) translateY(px2rem(240));
+      }
+      .gift11 {
+        @include wh(51, 31);
+        @include bgc("../images/page7/gift11.png");
+        transform: translateX(-50%) rotate(28*11deg) translateY(px2rem(240));
+      }
+      .gift12 {
+        @include wh(37, 23);
+        @include bgc("../images/page7/gift12.png");
+        transform: translateX(-50%) rotate(28*12deg) translateY(px2rem(240));
+      }
+
+    }
+  }
+  .sphere {
+    @include wh(640, 356);
+    @include bgc("../images/page7/sphere6.png");
+    bottom: 0;
+  }
+}
+// 轮播页面 7
+.page7 {
+  background-color: #19072A;
+  .streetlight {
+    @include wh(80, 443);
+    @include bg("../images/page8/streetlight.png");
+    bottom: px2rem(300);
+    left: px2rem(240);
+    .light {
+      @include wh(437, 427);
+      @include bg("../images/page8/lamplight.png");
+      top: px2rem(10);
+      left: px2rem(-140);
+    }
+  }
+  .bear {
+    @include wh(276, 271);
+    @include bg("../images/page8/bear6.png");
+    bottom: px2rem(280);
+    left: px2rem(230);
+    z-index: 1;
+  }
+  .moto {
+    @include wh(200, 137);
+    @include bg("../images/page8/moto.png");
+    bottom: px2rem(335);
+    left: px2rem(100);
+  }
+  .share {
+    @include wh(379, 113);
+    @include bgc("../images/page8/share.png");
+    bottom: px2rem(140);
+    z-index: 1;
+  }
+  .info {}
+  .sphere {
+    @include wh(640, 384);
+    @include bgc("../images/page8/sphere7.png");
+    bottom: 0;
+  }
+}
