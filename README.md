@@ -91,6 +91,8 @@
 
 我计划在这里记录每日/每周的学习简报或笔记：
 *   <!-- 新的日志会添加到这里 -->
+*   **week6-day6 的学习简报 (2025-07-05):** [React实践：从CRA项目迁移到Vite，项目结构重组，并掌握react三大组件通信模式](./learning_logs/week6-day6.md)
+*   **week6-day5 的学习简报 (2025-07-04):** [深度探索：从JS编译原理到React现代化工程实践的完整纪实](./learning_logs/week6-day5.md)
 *   **week6-day4 的学习简报 (2025-07-03):** [JS进阶收尾, "百度外卖"项目实践(响应式,Sass,Swiper)与React首日：Vite环境搭建、JSX入门](./learning_logs/week6-day4.md)
 *   **week6-day3 的学习简报 (2025-07-02):** [JS进阶理论收尾 & "百度外卖"项目启动 (rem响应式布局, Sass工程化, Swiper应用)](./learning_logs/week6-day3.md)
 *   **week6-day2 的学习简报 (2025-07-01):** [JS核心理论深度攻坚 (原型与原型链, this指向, 深浅拷贝)](./learning_logs/week6-day2.md)
