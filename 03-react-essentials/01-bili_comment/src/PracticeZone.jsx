@@ -45,8 +45,33 @@ function GetDom() {
   )
 }
 
+
+// 组件通信：子传父，在子组件中调用父组件的函数并传递实参
+function Son({onGetMsg}) {
+    // props是一个对象，里面包含了父组件传递过来的所有数据
+    const sonMsg = 'Son message is coming'
+    return (
+        <div>
+            this is Son,
+            <button
+                onClick={() => onGetMsg(sonMsg)}
+            >
+                给父组件传递消息
+            </button>
+        </div>
+    )
+}
+
+
 // 主练习区组件，用来组合所有的小练习
 export default function PracticeZone() {
+  // 父子通信：把父组件的数据传给子组件。1. 父组件传递数据-在子组件标签上绑定属性；2，子组件接收数据，子组件通过 props 参数接收数据。
+  // const name = 'this is father component name'
+  const [msg, setMsg] = useState("")
+  const getMsg = (msg) => {
+    setMsg(msg)
+  }
+
   return (
       <div style={{ padding: '20px', border: '2-px solid red', margin: '20px' }}>
         <h1>--- 我的React练习区 ---</h1>
@@ -56,6 +81,12 @@ export default function PracticeZone() {
         <hr />
         <h2>--- 从React获取DOM元素 ---</h2>
         <GetDom />
+        <hr />
+        <h2>--- 组件通信 ---</h2>
+        <div>
+            this is father component, {msg}
+            <Son onGetMsg={getMsg} />
+        </div>
       </div>
   );
 }
