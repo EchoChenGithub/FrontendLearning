@@ -1,0 +1,36 @@
+
+@import "../less/base.less";
+
+
+@vw: 3.75vw;
+
+// 头部
+body {
+  background-color: pink;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 (15 / @vw);
+  height: (50/ @vw);
+  background-color: #fff;
+  .left {
+    width: (235 / @vw);
+    height: (50 / @vw);
+    background-image: url(../assets/head.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  a {
+    width: (80 / @vw);
+    height: (30 / @vw);
+    background-color: #FFE31B;
+    border-radius: (15 / @vw);
+    text-align: center;
+    line-height: (30 / @vw);
+    font-size: (14 / @vw);
+  }
+}
+

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <!--    index css 引入 放在 swiper 引入的后面，避免出现覆盖问题-->
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        // 封装成一个函数，方便复用
+        function setRemUnit() {
+            // 1. 设计稿的宽度
+            const designWidth = 640;
+            // 2. 设计稿上的基准 font-size
+            const designFontSize = 24;
+
+            // 3. 获取当前屏幕的宽度 (视口宽度)
+            const screenWidth = document.documentElement.clientWidth;
+
+            // 4. 计算实际应该设置的 font-size
+            const actualFontSize = (screenWidth / designWidth) * designFontSize;
+
+            // 5. 将计算出的值，设置给 html 元素的 style
+            document.documentElement.style.fontSize = actualFontSize + 'px';
+        }
+
+        // 首次加载时，调用一次
+        setRemUnit();
+
+        // 当窗口尺寸变化时，重新调用
+        window.addEventListener('resize', setRemUnit);
+    </script>
+</head>
+<body>
+    <!--loading页面-->
+    <div class="loading">
+        <div class="rider"></div>
+        <div class="progress"></div>
+        <div class="info"></div>
+        <!--外卖的 logo-->
+        <div class="logo"></div>
+        <!--版权信息-->
+        <div class="copyright">
+            @2025 Dubai Wai Mai Produced
+        </div>
+    </div>
+    <!--欢迎页面-->
+    <div class="welcome">
+        <div class="info">
+            <div class="hello"></div>
+        </div>
+        <!--云-->
+        <div class="cloud"></div>
+        <!--草地-->
+        <div class="grass1"></div>
+        <!--熊笼-->
+        <div class="bear-box">
+            <div class="bear"></div>
+            <div class="smoke"></div>
+        </div>
+        <!--树-->
+        <div class="trees"></div>
+        <!--草地2-->
+        <div class="grass2"></div>
+        <!--旋转的按钮-->
+        <div class="rotate-btn-box">
+            <div class="btn"></div>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+        </div>
+
+
+    </div>
+    <!--swiper页面-->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide page1">
+                <div class="title">
+                    <h3>生活中,</h3>
+                    <p>经常有这种时候...</p>
+                    <div class="line">
+                    </div>
+                </div>
+                <!--轮播的图-->
+                <div class="scroll-page1">
+                    <div class="bg"></div>
+                    <div class="person">
+                        <div class="files">
+                            <!--paper1-->
+                            <div class="paper1"></div>
+                            <!--paper2-->
+                            <div class="paper2"></div>
+                        </div>
+                    </div>
+                    <div class="sphere"></div>
+                    <div class="message-container">
+                        <div class="info"></div>
+                    </div>
+                </div>
+                <div class="scroll-page2">
+                    <div class="bg"></div>
+                    <div class="person">
+                        <div class="leg1"></div>
+                        <div class="leg2"></div>
+                    </div>
+                    <div class="message-container">
+                        <div class="info"></div>
+                    </div>
+                </div>
+                <div class="scroll-page3">
+                    <div class="bg"></div>
+                    <div class="person">
+                        <div class="info1"></div>
+                        <div class="info2"></div>
+                        <div class="info3"></div>
+                        <div class="info4"></div>
+                    </div>
+                    <div class="message-container">
+                        <div class="info"></div>
+                    </div>
+                </div>
+                <!--右下角熊-->
+                <div class="bear"></div>
+                <!--星球-->
+                <div class="sphere"></div>
+            </div>
+            <div class="swiper-slide page2">
+                <div class="title">
+                    <h3>这时候</h3>
+                    <p>如果有一份美味外卖...<br>正好出现...</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bg"></div>
+                <div class="bear">
+                    <div class="hand-left"></div>
+                    <div class="hand-right"></div>
+                    <div class="happy"></div>
+                    <div class="sad"></div>
+                </div>
+                <div class="table"></div>
+                <div class="foods"></div>
+                <div class="sphere"></div>
+            </div>
+            <div class="swiper-slide page3">
+                <div class="title">
+                    <h3>这时候</h3>
+                    <p>如果有一份美味外卖...<br>正好出现...</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bg"></div>
+                <div class="bear"></div>
+                <div class="evil"></div>
+                <div class="license"></div>
+                <div class="oil"></div>
+                <div class="sphere"></div>
+            </div>
+            <div class="swiper-slide page4">
+                <div class="title">
+                    <h3>度百外卖</h3>
+                    <p>只做有品质的外卖...<br>操作快捷...</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bg"></div>
+                <div class="bear"></div>
+                <div class="card1"></div>
+                <div class="card2"></div>
+                <div class="card3"></div>
+                <div class="sphere"></div>
+            </div>
+            <div class="swiper-slide page5">
+                <div class="title">
+                    <h3>无论前方</h3>
+                    <p>狂风，大雨，还是飘雪...<br>始终坚持在路上...</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bg"></div>
+                <div class="cloud"></div>
+                <div class="bear">
+                    <div class="smoke"></div>
+                </div>
+                <div class="sphere"></div>
+            </div>
+            <div class="swiper-slide page6">
+                <div class="title">
+                    <h3>无论前方</h3>
+                    <p>狂风，大雨，还是飘雪...<br>始终坚持在路上...</p>
+                    <div class="line"></div>
+                </div>
+                <div class="bg"></div>
+                <div class="cloud"></div>
+                <div class="bear">
+                    <div class="gift-box">
+                        <div class="gift1"></div>
+                        <div class="gift2"></div>
+                        <div class="gift3"></div>
+                        <div class="gift4"></div>
+                        <div class="gift5"></div>
+                        <div class="gift6"></div>
+                        <div class="gift7"></div>
+                        <div class="gift8"></div>
+                        <div class="gift9"></div>
+                        <div class="gift10"></div>
+                        <div class="gift11"></div>
+                        <div class="gift12"></div>
+                    </div>
+                </div>
+                <div class="sphere"></div>
+            </div>
+            <div class="swiper-slide page7">
+                <div class="title">
+                    <h3>所有的努力</h3>
+                    <p>就是为了健康美味的外面...<br>呈现给你...</p>
+                    <div class="line"></div>
+                </div>
+                <div class="streetlight">
+                    <div class="light"></div>
+                </div>
+                <div class="moto"></div>
+                <div class="bear"></div>
+                <div class="share"></div>
+                <div class="info"></div>
+                <div class="sphere"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="lib/swiper.min.js"></script>
+    <script type="text/javascript" src="lib/zepto.js"></script>
+    <script type="text/javascript" src="lib/event.js"></script>
+    <script type="text/javascript" src="lib/fx.js"></script>
+    <script type="text/javascript" src="lib/fx_methods.js"></script>
+    <script type="text/javascript" src="lib/touch.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'vertical',
+        })
+
+        // // 点击消失
+        // $('.loading').on('click', function() {
+        //     // 淡出
+        //     $(this).fadeOut()
+        // })
+        // $('.welcome').on('click', function() {
+        //     // 淡出
+        //     $(this).fadeOut()
+        // })
+    </script>
+</body>
+</html>

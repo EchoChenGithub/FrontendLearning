@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素逐渐隐藏并消失</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            text-align:center;
+            line-height: 200px;
+        }
+        a {
+            text-decoration: none;
+
+        }
+        .star {
+            font-size: 50px;
+            color: yellow;
+            /* 元素隐藏 */
+            /*visibility: hidden;*/
+            /* 元素隐藏 */
+            opacity: 1;
+            transition: all 1s;
+        }
+        .hiding {
+            opacity: 0;
+        }
+        button {
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="#">
+            <span class="star">★</span>
+        </a>
+    </div>
+    <button>让五角星消失</button>
+    <script>
+        // 获取元素
+        const star = document.querySelector('.star');
+        const button = document.querySelector('button');
+        // 添加隐藏事件
+        button.addEventListener('click', function () {
+            star.classList.add('hiding');
+        })
+        // 监听动画结束
+        star.addEventListener('transitionend', function () {
+            star.style.display = 'none';
+        })
+    </script>
+</body>
+</html>
