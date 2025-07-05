@@ -1,4 +1,4 @@
-import {useRef, useState} from "react";
+import {createContext, useContext, useRef, useState} from "react";
 
 
 // 受控表单绑定
@@ -46,7 +46,8 @@ function GetDom() {
 }
 
 
-// 组件通信：子传父，在子组件中调用父组件的函数并传递实参
+// 组件通信：
+// 组件通信 1：子传父，在子组件中调用父组件的函数并传递实参
 function Son({onGetMsg}) {
     // props是一个对象，里面包含了父组件传递过来的所有数据
     const sonMsg = 'Son message is coming'
@@ -61,7 +62,7 @@ function Son({onGetMsg}) {
         </div>
     )
 }
-// 兄弟通信
+// 组件通信 2：兄弟通信
 function A({onGetAName}) {
     // Son组件中的数据
     const name = "A's name"
@@ -72,7 +73,6 @@ function A({onGetAName}) {
         </div>
     )
 }
-
 function B({name}) {
     return (
         <div>
@@ -81,7 +81,31 @@ function B({name}) {
         </div>
     )
 }
+// 组件通信 3：跨层通信 App -> C -> D
+// 使用 context 机制跨层级组件通信
+// 1. 使用 createContext 方法创建一个上下文对象 Ctx
+// 2. 在顶层组件中通过 Ctx.Provider 组件提供数据
+// 3. 在底层组件中通过 useContext 钩子函数获取消费数据
+const MsgContext = createContext()
+function C() {
+    return (
+        <div>
+            this is middle component,
+            <D />
+        </div>
+    )
+}
+function D() {
+    const topMsg = useContext(MsgContext)
+    return (
+        <div>
+            this is bottom component, {topMsg}
+        </div>
+    )
+}
 
+
+// -----------------------------------------------------------------------------------------
 // 主练习区组件，用来组合所有的小练习
 export default function PracticeZone() {
   // 父子通信：把父组件的数据传给子组件。1. 父组件传递数据-在子组件标签上绑定属性；2，子组件接收数据，子组件通过 props 参数接收数据。
@@ -93,6 +117,12 @@ export default function PracticeZone() {
   }
   const getAName = (name) => {
     setName(name)
+  }
+  // 1. 为跨层通信创建一个新的 state
+  const [contextMsg, setContextMsg] = useState('默认消息')
+  // 2. 创建一个点击事件处理函数，用来更新 contextMsg
+  const handleContextBtnClick = () => {
+      setContextMsg('来自顶层按钮的新消息！' + Math.random())
   }
 
   return (
@@ -117,7 +147,14 @@ export default function PracticeZone() {
             <A onGetAName={getAName} />
             <B name={name} />
         </div>
-
+        <h3>跨层通信</h3>
+        <div>
+          <MsgContext.Provider value={contextMsg}>
+              this is top component,
+              <button onClick={()=>{handleContextBtnClick(contextMsg)}}>给bottom 发送信息</button>
+              <C />
+          </MsgContext.Provider>
+        </div>
 
       </div>
   );
