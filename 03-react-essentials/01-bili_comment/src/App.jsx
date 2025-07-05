@@ -1,6 +1,6 @@
 import avatar from './assets/bozai.png'
 import './App.scss'
-import {useState} from "react";
+import {useRef, useState} from "react";
 import PracticeZone from "./PracticeZone.jsx";
 import _ from "lodash";
 import classNames from "classnames";
@@ -112,6 +112,7 @@ function App() {
 
     // 4.点击发布评论
     const [content, setContent] = useState('')
+    const inputRef = useRef(null)
     const handlePublish = () =>  {
         setCommentList([
                 ...commentList,
@@ -130,9 +131,11 @@ function App() {
                     ctime: dayjs(new Date()).format('MM-DD hh:mm'),  // 格式化 月-日 时:分
                     like: 88,
                 },
-        ]
-
-        )
+        ])
+        // 1. 清空内容：把控制input的value状态设置为空串
+        setContent('')
+        // 2. 重新聚焦 - 拿到input的dom元素，调用focus方法
+        inputRef.current.focus()
     }
 
 
@@ -174,6 +177,7 @@ function App() {
                             <textarea
                                 className="reply-box-textarea"
                                 placeholder="发一条友善的评论"
+                                ref={inputRef}
                                 value={content}
                                 onChange={(e) => setContent(e.target.value)}
                             />
