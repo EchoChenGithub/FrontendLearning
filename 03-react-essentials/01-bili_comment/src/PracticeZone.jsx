@@ -61,15 +61,38 @@ function Son({onGetMsg}) {
         </div>
     )
 }
+// 兄弟通信
+function A({onGetAName}) {
+    // Son组件中的数据
+    const name = "A's name"
+    return (
+        <div>
+            this is A component,
+            <button onClick={()=>onGetAName(name)}>给 B 发送信息</button>
+        </div>
+    )
+}
 
+function B({name}) {
+    return (
+        <div>
+            this is B component,
+            A's name is {name}.
+        </div>
+    )
+}
 
 // 主练习区组件，用来组合所有的小练习
 export default function PracticeZone() {
   // 父子通信：把父组件的数据传给子组件。1. 父组件传递数据-在子组件标签上绑定属性；2，子组件接收数据，子组件通过 props 参数接收数据。
   // const name = 'this is father component name'
   const [msg, setMsg] = useState("")
+  const [name, setName] = useState('')
   const getMsg = (msg) => {
     setMsg(msg)
+  }
+  const getAName = (name) => {
+    setName(name)
   }
 
   return (
@@ -83,10 +106,19 @@ export default function PracticeZone() {
         <GetDom />
         <hr />
         <h2>--- 组件通信 ---</h2>
+        <h3>子传父</h3>
         <div>
             this is father component, {msg}
             <Son onGetMsg={getMsg} />
         </div>
+        <h3>兄弟通信</h3>
+        <div>
+            this is father PracticeZone
+            <A onGetAName={getAName} />
+            <B name={name} />
+        </div>
+
+
       </div>
   );
 }
