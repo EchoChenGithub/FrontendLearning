@@ -55,13 +55,16 @@ public/build/ # 适用于某些框架
 .vite-inspect/
 
 # Create React App 构建产物
-build/
 
 # Next.js / Nuxt.js 等框架的构建产物
 .next/
 .nuxt/
 
+# Ignore all Source Map files
+*.map
 
+# 忽略所有在 src 目录下，由 scss/less 等预处理器生成的 css 文件，这能防止把编译产物提交到仓库
+src/**/*.css
 # ===================================================================
 # 忽略敏感的环境变量文件
 # 安全第一！防止 API 密钥等敏感信息泄露到 GitHub
@@ -97,3 +100,4 @@ test.html
 *.zip
 *.rar
 *.gz
+
