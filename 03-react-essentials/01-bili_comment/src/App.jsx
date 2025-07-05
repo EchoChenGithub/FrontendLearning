@@ -1,12 +1,16 @@
 import avatar from './assets/bozai.png'
 import './App.scss'
 import {useState} from "react";
+import PracticeZone from "./PracticeZone.jsx";
 import _ from "lodash";
 import classNames from "classnames";
+import { v4 as uuidv4 } from 'uuid';
+import dayjs from "dayjs";
+
+uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
 
 /**
  * 评论列表的渲染和操作assets
- *
  * 1. 根据状态渲染评论列表
  * 2. 删除评论
  */
@@ -106,97 +110,129 @@ function App() {
 
     }
 
+    // 4.点击发布评论
+    const [content, setContent] = useState('')
+    const handlePublish = () =>  {
+        setCommentList([
+                ...commentList,
+                {
+                    // 评论id
+                    rpid: uuidv4(),  // 随机id
+                    // 用户信息
+                    user: {
+                        uid: '13258165',
+                        avatar: '',
+                        uname: '周杰伦',
+                    },
+                    // 评论内容
+                    content: content,
+                    // 评论时间
+                    ctime: dayjs(new Date()).format('MM-DD hh:mm'),  // 格式化 月-日 时:分
+                    like: 88,
+                },
+        ]
+
+        )
+    }
+
+
     return (
         <div className="app">
-            {/* 导航 Tab */}
-            <div className="reply-navigation">
-                <ul className="nav-bar">
-                    <li className="nav-title">
-                        <span className="nav-title-text">评论</span>
-                        {/* 评论数量 */}
-                        <span className="total-reply">{10}</span>
-                    </li>
-                    <li className="nav-sort">
-                        {/* 高亮类名： active */}
-                        {tabs.map((item) => (
-                            <span
-                                key={item.type}
-                                onClick={() => handleTabChange(item.type)}
-                                className={classNames('nav-item', {active: type === item.type})}>
+                {/* 导航 Tab */}
+                <div className="reply-navigation">
+                    <ul className="nav-bar">
+                        <li className="nav-title">
+                            <span className="nav-title-text">评论</span>
+                            {/* 评论数量 */}
+                            <span className="total-reply">{10}</span>
+                        </li>
+                        <li className="nav-sort">
+                            {/* 高亮类名： active */}
+                            {tabs.map((item) => (
+                                <span
+                                    key={item.type}
+                                    onClick={() => handleTabChange(item.type)}
+                                    className={classNames('nav-item', {active: type === item.type})}>
                                 {item.text}
                             </span>
-                        ))}
-                    </li>
-                </ul>
-            </div>
-
-            <div className="reply-wrap">
-                {/* 发表评论 */}
-                <div className="box-normal">
-                    {/* 当前用户头像 */}
-                    <div className="reply-box-avatar">
-                        <div className="bili-avatar">
-                            <img className="bili-avatar-img" src={avatar} alt="用户头像" />
-                        </div>
-                    </div>
-                    <div className="reply-box-wrap">
-                        {/* 评论框 */}
-                        <textarea
-                            className="reply-box-textarea"
-                            placeholder="发一条友善的评论"
-                        />
-                        {/* 发布按钮 */}
-                        <div className="reply-box-send">
-                            <div className="send-text">发布</div>
-                        </div>
-                    </div>
+                            ))}
+                        </li>
+                    </ul>
                 </div>
-                {/* 评论列表 */}
-                <div className="reply-list">
-                    {/* 评论项 */}
-                    {commentList.map(item => (
-                        <div key={item.rpid} className="reply-item">
-                            {/* 头像 */}
-                            <div className="root-reply-avatar">
-                                <div className="bili-avatar">
-                                    <img
-                                        className="bili-avatar-img"
-                                        alt=""
-                                        src={item.user.avatar}
-                                    />
-                                </div>
-                            </div>
 
-                            <div className="content-wrap">
-                                {/* 用户名 */}
-                                <div className="user-info">
-                                    <div className="user-name">{item.user.name}</div>
+                <div className="reply-wrap">
+                    {/* 发表评论 */}
+                    <div className="box-normal">
+                        {/* 当前用户头像 */}
+                        <div className="reply-box-avatar">
+                            <div className="bili-avatar">
+                                <img className="bili-avatar-img" src={avatar} alt="用户头像" />
+                            </div>
+                        </div>
+                        <div className="reply-box-wrap">
+                            {/* 评论框 */}
+                            <textarea
+                                className="reply-box-textarea"
+                                placeholder="发一条友善的评论"
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
+                            />
+                            {/* 发布按钮 */}
+                            <div className="reply-box-send">
+                                <div className="send-text" onClick={handlePublish}>发布</div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* 评论列表 */}
+                    <div className="reply-list">
+                        {/* 评论项 */}
+                        {commentList.map(item => (
+                            <div key={item.rpid} className="reply-item">
+                                {/* 头像 */}
+                                <div className="root-reply-avatar">
+                                    <div className="bili-avatar">
+                                        <img
+                                            className="bili-avatar-img"
+                                            alt=""
+                                            src={item.user.avatar}
+                                        />
+                                    </div>
                                 </div>
-                                {/* 评论内容 */}
-                                <div className="root-reply">
-                                    <span className="reply-content">{item.content}</span>
-                                    <div className="reply-info">
-                                        {/* 评论时间 */}
-                                        <span className="reply-time">{item.ctime}</span>
-                                        {/* 评论数量 */}
-                                        <span className="reply-time">点赞数:{item.like}</span>
-                                        {/* 条件： user.id === item.user.id */}
-                                        {user.uid === item.user.uid &&
-                                            <span className="delete-btn" onClick={() => handleDel(item.rpid)}>
+
+                                <div className="content-wrap">
+                                    {/* 用户名 */}
+                                    <div className="user-info">
+                                        <div className="user-name">{item.user.name}</div>
+                                    </div>
+                                    {/* 评论内容 */}
+                                    <div className="root-reply">
+                                        <span className="reply-content">{item.content}</span>
+                                        <div className="reply-info">
+                                            {/* 评论时间 */}
+                                            <span className="reply-time">{item.ctime}</span>
+                                            {/* 评论数量 */}
+                                            <span className="reply-time">点赞数:{item.like}</span>
+                                            {/* 条件： user.id === item.user.id */}
+                                            {user.uid === item.user.uid &&
+                                                <span className="delete-btn" onClick={() => handleDel(item.rpid)}>
                                             删除
                                             </span>
-                                        }
+                                            }
 
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
+
+                {/* 在这里渲染你的练习区 */}
+                <PracticeZone />
+
             </div>
-        </div>
-    )
-}
+        )
+    }
 
 export default App
