@@ -27,7 +27,7 @@
 
 ## 🎯 两个月学习计划与当前进度
 
-### 第一阶段：前端基础夯实 (第1-3周)  🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 95%
+### 第一阶段：前端基础夯实 (第1-3周)  🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100%
 *   **学习课程:** 前端Web开发HTML5+CSS3+移动web视频教程 (黑马程序员)
 *   **课程进度** ██████████ 100%(200/200)
 *   **主要模块:**
@@ -52,9 +52,9 @@
     *   [x] HTTP 基础与 AJAX (fetch API)
     *   [x] **练习项目2:** [百度外卖项目实战] - (https://github.com/EchoChenGithub/FrontendLearning/tree/main/00-portfolio-projects/baiduWM) [在线演示链接 (稍后部署)]
 
-### 第二阶段：框架学习与项目实践 (第4-7周)🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜ 10%
+### 第二阶段：框架学习与项目实践 (第4-7周)🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜ 20%
 *   **学习课程:** 黑马程序员前端React视频教程，react零基础入门原理详解到好客租房项目实战
-*   **课程进度** ██░░░░░░░ 18%(30/165)
+*   **课程进度** ███░░░░░░ 27%(45/165)
 *   **工具与版本控制:**
     *   [ ] Git 基础与 GitHub 协作流程
 *   **前端框架: React.js**
@@ -87,6 +87,7 @@
     *   前端学习路线：https://juejin.cn/post/6982801495993352229?share_token=b8297561-05d9-4af0-a7b2-1bade8ad7d90
     *   [前端Web开发HTML5+CSS3+移动web视频教程 (黑马程序员)](https://www.bilibili.com/video/BV1kM4y127Li?buvid=XUA0035AF28F3800F042A080C5A0813C5AB75&from_spmid=main.space-contribution.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=79b92286-32ce-4f9a-b1a6-b97b8284da6b&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1746622820&unique_k=ZOPa0cf&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809) - 基础，学习怎么在浏览器中画东西
     *   [黑马程序员前端JavaScript入门到精通全套视频教程，javascript核心进阶ES6语法、API、js高级等基础知识和实战教程](https://www.bilibili.com/video/BV1Y84y1L7Nn/?vd_source=524015b80a727597d3f2d480dff48809) - 基础 js 和浏览器中的相关 API
+    *   [前端教程_百度外卖项目实战开发](https://www.bilibili.com/video/BV1nx411E7Rh?buvid=XUA0035AF28F3800F042A080C5A0813C5AB75&from_spmid=main.space-contribution.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=e4d39fe9-0b29-427c-b1cb-cd80ece39ac8&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1746623176&unique_k=cKSPSif&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809) - 上手一个完整的实践项目
     *   [前端教程_百度外卖项目实战开发](https://www.bilibili.com/video/BV1nx411E7Rh?buvid=XUA0035AF28F3800F042A080C5A0813C5AB75&from_spmid=main.space-contribution.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=e4d39fe9-0b29-427c-b1cb-cd80ece39ac8&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1746623176&unique_k=cKSPSif&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809) - 上手一个完整的实践项目
     *   [黑马程序员前端React18入门到实战视频教程，从react+hooks核心基础到企业级项目开发实战（B站评论、极客园项目等）及大厂面试全通关](https://www.bilibili.com/video/BV1ZB4y1Z7o8?buvid=XUC4DC8CDCD399337475901436DDA55A0083A&from_spmid=search.search-result.0.0&is_story_h5=false&mid=je%2FYBeRdWoAUraXta5xyZA%3D%3D&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=c5721549-7a26-4887-897d-199f6556d4db&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1751435973&unique_k=rTXIJJn&up_id=37974444&vd_source=524015b80a727597d3f2d480dff48809&spm_id_from=333.788.videopod.episodes) - 学习前端框架 react
 *   **文档与书籍:**

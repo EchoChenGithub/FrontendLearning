@@ -1,6 +1,6 @@
 ## 学习简报 - 2025年7月9日 (上午)
 
-**总学习时长 (此期间合计)：** 约 4 小时
+**总学习时长 (此期间合计)：** 约 7.5 小时
 
 **学习课程/内容：** 前端框架前置核心知识梳理
 
@@ -47,13 +47,66 @@
     *   **包与 `package.json`:** 区分了“项目包”和“软件包”的概念，并掌握了 `package.json` 作为包的“身份证”，其 `main` 字段定义了包的入口文件。
     *   **`pnpm` 工作原理:** 深入了解了 `pnpm` 是如何通过**内容寻址存储**和**符号链接**来高效管理 `node_modules`，从而节省磁盘空间、加快安装速度问题的。
 
+7.  **Web 服务与 HTTP 基础:**
+    *   **URL 与端口:** 梳理了 URL 的构成，并理解了“端口号”是用于标记服务器上不同服务程序的“分机号”。
+    *   **Node.js `http` 模块:** 初步学习了如何使用 Node.js 的核心 `http` 模块来创建一个最基础的 Web 服务器。
+    *   **AJAX 与 `XMLHttpRequest` (XHR):** 回顾了 AJAX 的核心思想（异步与局部更新），并了解了 XHR 作为其原生实现的基本工作流程。通过对比，更深刻地体会到 `Promise` 和 `axios` 对其的优雅封装。
+
+### **第四部分：Redux 状态管理入门与实践**
+
+系统性地学习了 Redux 的核心概念，并使用 Redux Toolkit (`RTK`) 和 `react-redux` 完整地实现了一个 Counter 应用。
+
+4.  **Redux 核心概念与安装:**
+    *   **核心思想:** 明确了 Redux 是一个可以独立于框架运行的、可预测的状态容器，主要用于解决大型应用中的状态共享问题。
+    *   **现代化安装:** 掌握了现代 Redux 开发的标准安装命令——`pnpm add @reduxjs/toolkit react-redux`，并清晰地辨析了 `@reduxjs/toolkit` (Redux 核心 + 简化工具) 和 `react-redux` (连接库) 的不同职责。
+
+5.  **Redux Toolkit (`RTK`) 实践流程:**
+    *   **Store 模块化组织:** 学习并实践了创建 `src/store` 和 `src/store/modules` 目录，将不同功能的状态（Slice）进行模块化管理的最佳实践。
+    *   **`createSlice`:** 掌握了使用 `createSlice` 来定义一个状态切片，包括 `name`, `initialState` 和 `reducers`。理解了 `reducers` 中的方法会自动生成对应的 `action creators`。
+    *   **`configureStore`:** 学会了在 `store/index.js` 中，使用 `configureStore` 将各个模块的 `reducer` 组合成一个根 `reducer`，并创建出全局唯一的 `store` 实例。
+    *   **处理带参数的 Action:** 理解了在 `reducer` 方法中通过第二个参数 `action` 来接收数据，并通过 `action.payload` 来获取从组件传递过来的载荷。
+
+6.  **`react-redux` 的使用:**
+    *   **注入 Store:** 掌握了在 `main.jsx` 中，使用 `<Provider store={store}>` 组件将 Redux `store` 注入到整个 React 应用中。
+    *   **读取状态 (`useSelector`):** 学会了使用 `useSelector(state => state.moduleName)` 这个 Hook，从 `store` 中精确地选择并订阅组件所需的数据。
+    *   **修改状态 (`useDispatch`):** 掌握了使用 `useDispatch` Hook 来获取 `dispatch` 函数，并通过 `dispatch(actionCreator())` 的方式，向 `store` 派发 `action` 来触发状态更新。
+    *   **调试与问题排查:** 在实践中遇到了“模块未安装”和“`action` 不是函数”等典型错误，通过分析报错信息和检查代码（如重启开发服务器、检查 `export` 语句、修正 `reducers` 笔误），锻炼了 Redux 应用的调试能力。
+
+7.  **异步状态操作 (理论):**
+    *   明确了 **Reducer 必须是纯函数**，不能包含网络请求等副作用。
+    *   初步了解了 Redux 处理异步操作的思路——在 `action` 层面处理，并学习了 Redux Toolkit 提供的 `createAsyncThunk` 是解决该问题的推荐方案。
+
+---
+### 💡 可能涉及的面试题
+
+1.  **“请简述一下 JavaScript 的事件循环机制，并解释一下宏任务和微任务的区别。”**
+    > **考察点:** 对 JS 异步编程底层原理的理解深度，这是衡量 JS 内功的重要指标。
+    > **核心思路:** JS 通过事件循环机制实现单线程的非阻塞，同步任务放入调用栈，异步任务放入宿主环境中，并在时间到的时候放入任务队列中等待执行。宏任务和微任务是两种不同的任务队列。事件循环在执行完调用栈里的任务后，会先执行微任务队列（清空），再执行宏任务队列。宏任务与浏览器的 API 相关，微任务通常与 Promise 相关（then 方法）
+
+2.  **“在 React 项目中，如何让组件能够读取和修改 Redux Store 中的状态？”**
+    > **考察点:** 对 `react-redux` 库核心 Hooks 的掌握程度，期待听到 `useSelector` 和 `useDispatch` 的标准用法。<br>
+    > **核心思路:** 通过 useSelector Hook 传入一个选择器函数，可以从 Redux Store 中订阅并读取状态。通过 useDispatch Hook 获取 dispatch 函数，并在事件中派发（dispatch）由 Action Creator 生成的 Action 对象来修改状态
+
+3.  **“Reducer 为什么必须设计成一个纯函数？”**
+    > **考察点:** 对函数式编程思想在 Redux 中应用的理解，以及对状态“可预测性”重要性的认知。 <br>
+    > **核心思路:** 首先，纯函数保证了状态更新的可预测性，使得时间旅行调试等功能得以实现。其次，它通过返回一个全新的 state 对象而不是修改旧的，来配合 React 的浅比较机制，从而高效地触发 UI 更新。
+
+4.  **（加分项）“Redux Toolkit (`RTK`) 相比于传统的 Redux，主要有哪些优势？”**
+    > **考察点:** 知识的更新度，看你是否了解并跟进了社区的最佳实践。期待听到“简化模板代码”、“内置 Immer 实现不可变更新”、“自动集成 DevTools 和 Thunk”等。
+    > **核心思路:** RTK 通过 createSlice 和 configureStore 等 API，极大地减少了样板代码，并简化了 Store 的配置。同时，它内置了 Immer 库，让开发者可以用看似“直接修改”的方式进行不可变更新，显著提升了开发体验。
+
 ---
 ### 🤔 思考与心得
 
 *   **知识的串联与融通：** 今天上午的学习，将之前零散的知识点（异步、HTTP、Node）串联成了一个完整的“Web数据交互”体系。从底层的XHR事件，到Promise的封装，再到axios的便捷使用，让我对日常开发中使用的工具有了“知其所以然”的理解。
 *   **宏观视角的重要性：** 理解了Node.js在前端工程化中扮演的“基石”角色后，让我对整个开发流程（编码 -> 检查 -> 转换 -> 打包 -> 部署）有了更宏观的认识，而不再仅仅局限于React组件的编写。
+*   **对 Redux 的初印象:** 初步接触下来，感觉 Redux 的流程确实比 `useState` 和 `Context` 要“重”，需要编写更多的模板代码（即使有 RTK 的简化）。但它的优势也显而易见：**严格的单向数据流和明确的职责分离**（Action, Reducer, Store），让状态的每一次变更都变得有迹可循。
+*   **“死记硬背”的反思 (重要):** 在实现 Counter 案例的过程中，我意识到自己更多的是在“背诵”和“模仿”一套固定的写法，而对每个 Hooks（特别是 `useState`, `useEffect`, `useRef`）在不同场景下的细微差别和设计哲学，理解得还不够深入。
+*   **学习策略调整:** 基于以上反思，我决定**暂停学习新知识**（如 React Router），在明天优先**回头系统性地复习和巩固 React 的核心 Hooks**。我相信，只有把地基打得更牢，才能更稳健地构建上层应用。
 
 ---
 ### 🚀 后续计划
 
-*   **回归React实践：** **(高优先级)** 休息过后，将回到“B站评论”案例，正式开始 `useEffect` 的异步数据请求实战，将今天所学理论付诸实践。
+*   **React Hooks 深度复习:** **(最高优先级)** 明天将系统性地复习 `useState` (不可变性)、`useEffect` (执行时机与清理)、`useRef` (与`useState`的区别) 这三大核心 Hooks，并通过专门的小练习来加深理解。
+*   **Redux 异步实践:** 在 Hooks 知识巩固后，将回到 Redux，实践使用 `createAsyncThunk` 来重构“B站评论”案例的数据获取逻辑。
+*   **React Router 学习:** 在对组件状态和全局状态都有了扎实的掌握后，再开始学习路由。
