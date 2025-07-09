@@ -1,4 +1,4 @@
-import {createContext, useContext, useRef, useState} from "react";
+import {createContext, useContext, useEffect, useRef, useState} from "react";
 
 
 // 受控表单绑定
@@ -105,6 +105,10 @@ function D() {
 }
 
 
+// useEffect练习
+const URL = 'https://geek.itheima.net/v1_0/channels'
+
+
 // -----------------------------------------------------------------------------------------
 // 主练习区组件，用来组合所有的小练习
 export default function PracticeZone() {
@@ -124,6 +128,11 @@ export default function PracticeZone() {
   const handleContextBtnClick = () => {
       setContextMsg('来自顶层按钮的新消息！' + Math.random())
   }
+
+  // useEffect 练习
+  useEffect(() => {
+      // 额外的操作，获取频道列表
+  }, [])
 
   return (
       <div style={{ padding: '20px', border: '2-px solid red', margin: '20px' }}>

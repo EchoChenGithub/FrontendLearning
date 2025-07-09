@@ -1,11 +1,12 @@
 import avatar from './assets/bozai.png'
 import './App.scss'
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import PracticeZone from "./PracticeZone.jsx";
 import _ from "lodash";
 import classNames from "classnames";
 import { v4 as uuidv4 } from 'uuid';
 import dayjs from "dayjs";
+import axios from "axios";
 
 uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
 
@@ -84,7 +85,20 @@ const tabs = [
 function App() {
     // 1. 渲染评论列表
     // 1.1 使用useState维护list
-    const [commentList, setCommentList] = useState(_.orderBy(defaultList, ['like'], ['desc']))
+    // const [commentList, setCommentList] = useState(_.orderBy(defaultList, ['like'], ['desc']))
+
+    // 获取接口数据渲染
+    const [commentList, setCommentList] = useState([])
+    useEffect(() => {
+        // 请求数据
+        async function getList() {
+            // axios请求数据
+            const res = await axios.get('http://localhost:3004/list')
+            setCommentList(res.data)
+        }
+        getList()
+    }, [])
+
 
     // 2.删除功能
     const handleDel = (id) => {
