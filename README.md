@@ -26,9 +26,9 @@
     *   [x] 函数与作用域
     *   [x] 对象与数组
     *   [x] DOM 操作与事件处理
-    *   [ ] ES6+ 新特性 (let/const, 箭头函数, 模板字符串, 解构赋值, Promise, async/await)
+    *   [x] ES6+ 新特性 (let/const, 箭头函数, 模板字符串, 解构赋值, Promise, async/await)
     *   [x] 浏览器对象模型 (BOM) 与本地存储 (Local Storage)
-    *   [ ] HTTP 基础与 AJAX (fetch API)
+    *   [x] HTTP 基础与 AJAX (fetch API)
     *   [x] **练习项目2:** [百度外卖项目实战] - (https://github.com/EchoChenGithub/FrontendLearning/tree/main/00-portfolio-projects/baiduWM) [在线演示链接 (稍后部署)]
 
 ### 第二阶段：框架学习与项目实践 (第4-7周)🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜ 10%
