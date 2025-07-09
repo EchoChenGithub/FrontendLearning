@@ -71,8 +71,8 @@
 *   **文档与书籍:**
     *   《深入解析 CSS》 - 参考书籍 （阅读至第二章）
     *   《CSS 揭秘》
-    *   《你不知道的JavaScript(上卷)》
-    *   《你不知道的JavaScript(中卷)》
+    *   《你不知道的JavaScript(上卷)》（已阅读： 第一部分：第 1 章 作用域；第二部分：第 1、2 章 this）
+    *   《你不知道的JavaScript(中卷)》（已阅读： 第二部分：第1、 2、3章 异步、回调、Promise）
     *   《JavaScript高级程序设计（第4版）》
     *   《JavaScript设计模式与开发实践》
 
@@ -91,6 +91,7 @@
 
 我计划在这里记录每日/每周的学习简报或笔记：
 *   <!-- 新的日志会添加到这里 -->
+*   **week7-day1 的学习简报 (2025-07-08):** [JS异步深度探索：从零完整实现一个Promise](./learning_logs/week7-day1.md)
 *   **week6-day6 的学习简报 (2025-07-05):** [React实践：从CRA项目迁移到Vite，项目结构重组，并掌握react三大组件通信模式](./learning_logs/week6-day6.md)
 *   **week6-day5 的学习简报 (2025-07-04):** [深度探索：从JS编译原理到React现代化工程实践的完整纪实](./learning_logs/week6-day5.md)
 *   **week6-day4 的学习简报 (2025-07-03):** [JS进阶收尾, "百度外卖"项目实践(响应式,Sass,Swiper)与React首日：Vite环境搭建、JSX入门](./learning_logs/week6-day4.md)
