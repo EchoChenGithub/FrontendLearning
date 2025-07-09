@@ -4,11 +4,11 @@
 // 构造函数初始化的时候设置三个核心属性 state（状态），value（成功值），reason（失败值）；以及两个回调函数数组，用于支持异步
 // 在构造函数内部定义resolve 和 reject 函数，分别用于解决和拒绝 Promise（注意只有在 pending 状态下才能改变状态）
 // 在构造函数中还要立即同步执行 executor 函数（这个 executor 是外部传进来的），并把 resolve 和 reject 函数作为参数
+
 // V2：
 // MyPromise 类的实例有一个 then 方法，用于注册解决和拒绝的回调函数
 // then 方法接收两个参数，分别是 onFulfilled 和 onRejected，onFulfilled 和 onRejected 都是函数，分别用于处理解决和拒绝的情况
 // then 方法定义了接口（then(onFulfilled, onRejected)），实现了“发布-订阅”模式以支持异步。当 executor是异步时，在调用 then 的时刻，promise 的状态会是 pending，此时不能立即执行回调，否则会丢失他们。解决方案是创建两个空数组用来暂存回调函数，然后在 下一个事件循环中执行resolve 或者 reject 时再遍历执行。
-
 
 // V3：
 // then 必须返回 promise对象，以支持链式调用
@@ -55,7 +55,6 @@ class MyPromise {
         } catch (error) {
             reject(error)
         }
-
     }
     then (onFulfilled, onRejected) {
         onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : value => value
@@ -63,7 +62,7 @@ class MyPromise {
             throw reason
         }
 
-        const promise2 = new Promise((resolve, reject) => {
+        const promise2 = new MyPromise((resolve, reject) => {
             // 如果状态是 fulfilled，执行 onFulfilled 函数
             if (this.state === FULFILLED) {
                 setTimeout(() => {
@@ -113,7 +112,6 @@ class MyPromise {
                     }, 0)
                 })
             }
-
         })
         return promise2;
     }
@@ -126,9 +124,8 @@ class MyPromise {
         // 判断onFulfilled/onRejected 的返回值 x 是否是 Promise 实例
         if (x instanceof MyPromise) {
             // 递归解析
-            x.then(y => {
-                this._resolvePromise(promise2, y, resolve, reject)
-            }, reject)  // .then 承诺了，当 Promise x 成功时，会把 x 的成果结果（也就是 value），作为参数，传递给 y => ... 这个回调函数。所以，y 是接收过来的那个成功结果的变量
+            const fulfilled = y => this._resolvePromise(promise2, y, resolve, reject)
+            x.then(fulfilled, reject)  // .then 承诺了，当 Promise x 成功时，会把 x 的成果结果（也就是 value），作为参数，传递给 y => ... 这个回调函数。所以，y 是接收过来的那个成功结果的变量
         }
         // x 是thenable
         else if (x !== null && (typeof x === 'function' || typeof x === 'object')) {
