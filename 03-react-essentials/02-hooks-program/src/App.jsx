@@ -1,6 +1,7 @@
 
 import './App.css'
 import UseStatePractice from "./components/useStatePractice.jsx"
+import { UseEffectPractice } from "./components/useEffectPractice.jsx";
 
 function App() {
 
@@ -15,9 +16,9 @@ function App() {
         {/*/!*  useEffect 练习 *!/*/}
         <hr/>
         <h1>------useEffect Practice------</h1>
-        {/*<section className="effect-hook-practice-section">*/}
-        {/*  <UseEffectPractice />*/}
-        {/*</section>*/}
+        <section className="effect-hook-practice-section">
+          <UseEffectPractice />
+        </section>
 
         {/*/!*  useRef 练习 *!/*/}
         <hr/>
