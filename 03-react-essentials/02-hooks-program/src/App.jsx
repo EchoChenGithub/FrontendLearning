@@ -2,6 +2,7 @@
 import './App.css'
 import UseStatePractice from "./components/useStatePractice.jsx"
 import { UseEffectPractice } from "./components/useEffectPractice.jsx";
+import UseContextPractice from "./components/useContextPractice.jsx";
 
 function App() {
 
@@ -20,12 +21,12 @@ function App() {
           <UseEffectPractice />
         </section>
 
-        {/*/!*  useRef 练习 *!/*/}
+        {/*/!*  useContext 练习 *!/*/}
         <hr/>
-        <h1>------useRef Practice------</h1>
-        {/*<section className="ref-hook-practice-section">*/}
-        {/*  <UseRefPractice />*/}
-        {/*</section>*/}
+        <h1>------useContext Practice------</h1>
+        <section className="context-hook-practice-section">
+          <UseContextPractice />
+        </section>
       </div>
   )
 }
