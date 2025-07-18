@@ -4,6 +4,7 @@ import UseStatePractice from "./components/useStatePractice.jsx"
 import { UseEffectPractice } from "./components/useEffectPractice.jsx";
 import UseContextPractice from "./components/useContextPractice.jsx";
 import UseMemoPractice from "./components/useMemoPractice.jsx";
+import Calculator from "./components/liftStateUp.jsx";
 
 function App() {
 
@@ -35,6 +36,14 @@ function App() {
         <section className="memo-hook-practice-section">
             <UseMemoPractice />
         </section>
+
+          {/*/!*  lift state up 练习 *!/*/}
+          <hr/>
+          <h1>------lift state up Practice------</h1>
+          <section className="lift-practice-section">
+              <Calculator />
+          </section>
+
       </div>
   )
 }
