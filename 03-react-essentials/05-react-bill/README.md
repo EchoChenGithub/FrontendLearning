@@ -1,12 +1,54 @@
-# React + Vite
+# 🚀 记账本应用 (05-react-bill)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是一个基于 React 构建的移动端风格记账本应用，旨在帮助用户便捷地记录和管理个人收支。本项目也是一个学习 React 核心概念、前端路由、状态管理和工程化实践的综合案例。
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ 主要功能
 
-## Expanding the ESLint configuration
+-   [x] **移动端友好界面:** 基于 `antd-mobile` 组件库，提供简洁美观的移动端用户体验。
+-   [x] **底部导航栏:** 集成 `antd-mobile` TabBar，实现月度账单、记账、年度账单、我的个人中心等页面间的快速切换。
+-   [x] **单页面应用 (SPA) 体验:** 使用 `react-router-dom` 实现无刷新页面跳转，提供流畅的用户交互。
+-   [x] **全局主题定制:** 支持自定义应用主色调和基础样式。
+-   [x] **账目列表展示:** 能够从 Mock API (通过 `json-server`) 获取并展示初始交易列表。
+-   [ ] 添加、删除、编辑账目功能 (待实现)
+-   [ ] 账目统计与图表展示 (按月、按年) (待实现)
+-   [ ] 交易详情页 (待实现)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ 技术栈
+
+本项目主要使用了以下技术：
+
+-   **前端框架:** `React`
+-   **构建工具:** `Vite`
+-   **包管理:** `pnpm`
+-   **UI 组件库:** `antd-mobile`, `antd-mobile-icons`
+-   **路由管理:** `react-router-dom`
+-   **状态管理:** `@reduxjs/toolkit`, `react-redux`
+-   **HTTP 请求:** `axios`
+-   **日期处理:** `dayjs`
+-   **CSS 工具:** `classnames`
+-   **Mock 数据服务:** `json-server`
+
+---
+
+## 🚀 快速启动
+
+按照以下步骤在本地运行项目：
+
+### **前提条件**
+
+-   Node.js (推荐 v16 或更高版本)
+-   pnpm (推荐 v7 或更高版本)
+
+### **安装依赖**
+
+```bash
+# 1. 克隆项目 (如果尚未克隆)
+# git clone [你的项目地址]
+# cd 05-react-bill # 确保进入到项目根目录
+
+# 2. 安装所有项目依赖
+pnpm install
