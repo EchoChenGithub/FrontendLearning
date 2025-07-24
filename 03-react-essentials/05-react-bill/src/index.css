@@ -30,6 +30,12 @@ body {
   min-height: 100vh;
 }
 
+/* 确保 #root 元素也能占据整个视口 */
+#root {
+  width: 100%;    /* <-- 关键：确保宽度是 100% */
+  height: 100%;   /* <-- 关键：确保高度是 100% */
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
