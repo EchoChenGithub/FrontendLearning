@@ -1,5 +1,5 @@
 # 学习简报 - 2025年07月24日
-**总学习时长 (此期间合计)：** 5小时
+**总学习时长 (此期间合计)：** 7小时
 
 **学习课程/内容：** 前端路由 (`react-router-dom`)，记账本案例项目初始化与搭建，Redux Toolkit 集成，`antd-mobile` 主题与 TabBar 应用。
 
@@ -49,13 +49,23 @@
         *   解决了 `TabBar` `key` 与 `Routes` `path` 不匹配导致无法正确跳转和高亮的问题，统一了 TabBar 的 `key` 和路由路径。
     *   **核心收获:** 深入理解了移动端布局中，确保根容器占据视口全宽的重要性。
 
+3.  **月度账单页 - 时间选择弹框功能实现：**
+    *   **需求:** 点击日期显示区打开 `DatePicker` 弹框，确认/取消/蒙层关闭弹框，箭头图标随状态切换。
+    *   **实现:**
+        *   使用 `useState` (`dateVisible`) 控制 `Popup` 和 `DatePicker` 的显示隐藏。
+        *   `useState` (`currentDate`) 存储当前选中的日期，并采用**惰性初始化** (`useState(() => new Date())`) 优化性能。
+        *   使用 `dayjs` 将 `Date` 对象格式化为 `YYYY年MM月` 字符串用于显示 (`displayDate`)。
+        *   为 `DatePicker` 绑定 `value={currentDate}` (Date 对象) 实现受控，并绑定 `onConfirm`/`onCancel`/`onClose` 回调来更新 `currentDate` 和关闭弹框。
+        *   使用 `classnames` 根据 `dateVisible` 状态动态切换箭头图标 (`UpOutline`/`DownOutline`) 的样式。
+    *   **核心收获:** 深入理解了 `useState` 惰性初始化、`DatePicker` 受控组件模式、以及日期格式化、`classnames` 动态样式控制。
+
 ---
 
 ### 🤔 思考与心得
 *   
 *   **Redux Toolkit 效率飞升:** `createSlice` 极大地简化了 Redux 的样板代码，让状态管理变得更直观、更易用，特别是对异步逻辑的初步处理。
 *   **浏览器渲染和 CSS 布局的深层影响:** `kaLayout` 宽度问题的排查，再次印证了 CSS 基础和浏览器渲染原理的重要性，从 `html`/`body` 到具体组件的层层影响。
-
+*   **调试与排错的耐心和方法论：** 从 `net::ERR_CONNECTION_REFUSED` 到 `billList` 为空，再到 `DatePicker` 不显示，每次问题都通过细致的日志、开发者工具观察、一步步排查得以解决，这极大地锻炼了解决实际问题的能力。
 
 ---
 
