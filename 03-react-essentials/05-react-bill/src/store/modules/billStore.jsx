@@ -1,5 +1,4 @@
 // 账单列表相关 store 模块
-
 import { createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
@@ -31,7 +30,9 @@ const getBillList = () => {
 }
 
 export { getBillList }
+
 // 导出 reducer
 const reducer = billStore.reducer
 
 export default reducer
+
