@@ -1,78 +1,147 @@
-.monthlyBill {
-  --ka-text-color: #191d26;
+.keepAccounts {
+  --ka-bg-color: #daf2e1;
+  --ka-color: #69ae78;
+  --ka-border-color: #191d26;
   height: 100%;
-  background: linear-gradient(180deg, #ffffff, #f5f5f5 100%);
-  background-size: 100% 240px;
-  background-repeat: no-repeat;
-  background-color: rgba(245, 245, 245, 0.9);
-  color: var(--ka-text-color);
+  background-color: var(--ka-bg-color);
 }
-.monthlyBill .nav {
+.keepAccounts .nav {
   --adm-font-size-10: 16px;
   color: #121826;
   background-color: transparent;
 }
-.monthlyBill .nav .adm-nav-bar-back-arrow {
+.keepAccounts .nav::after {
+  height: 0;
+}
+.keepAccounts .nav .adm-nav-bar-back-arrow {
   font-size: 20px;
 }
-.monthlyBill .content {
-  height: 573px;
-  padding: 0 10px;
+.keepAccounts .header {
+  height: 132px;
+}
+.keepAccounts .header .kaType {
+  padding: 9px 0;
+  text-align: center;
+}
+.keepAccounts .header .kaType .adm-button {
+  --adm-font-size-9: 13px;
+}
+.keepAccounts .header .kaType .adm-button:first-child {
+  margin-right: 10px;
+}
+.keepAccounts .header .kaType .selected {
+  color: #fff;
+  --background-color: var(--ka-border-color);
+}
+.keepAccounts .header .kaFormWrapper {
+  padding: 10px 22.5px 20px;
+}
+.keepAccounts .header .kaFormWrapper .kaForm {
+  display: flex;
+  padding: 11px 15px 11px 12px;
+  border: 0.5px solid var(--ka-border-color);
+  border-radius: 9px;
+  background-color: #fff;
+}
+.keepAccounts .header .kaFormWrapper .kaForm .date {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: 5.5px 5px;
+  border-radius: 4px;
+  color: var(--ka-color);
+  background-color: var(--ka-bg-color);
+}
+.keepAccounts .header .kaFormWrapper .kaForm .date .icon {
+  margin-right: 6px;
+  font-size: 17px;
+}
+.keepAccounts .header .kaFormWrapper .kaForm .date .text {
+  font-size: 16px;
+}
+.keepAccounts .header .kaFormWrapper .kaForm .kaInput {
   flex: 1;
+  display: flex;
+  align-items: center;
+}
+.keepAccounts .header .kaFormWrapper .kaForm .kaInput .input {
+  flex: 1;
+  margin-right: 10px;
+  --text-align: right;
+  --font-size: 24px;
+  --color: var(--ka-color);
+  --placeholder-color: #d1d1d1;
+}
+.keepAccounts .header .kaFormWrapper .kaForm .kaInput .iconYuan {
+  font-size: 24px;
+}
+.keepAccounts .kaTypeList {
+  height: 490px;
+  padding: 20px 11px;
+  padding-bottom: 70px;
   overflow-y: scroll;
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 }
-.monthlyBill .content::-webkit-scrollbar {
+.keepAccounts .kaTypeList::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
-.monthlyBill .content > .header {
-  height: 135px;
-  padding: 20px 20px 0 18.5px;
-  margin-bottom: 10px;
-  background-color: orange;
-  background-size: 100% 100%;
-}
-.monthlyBill .content > .header .date {
-  display: flex;
-  align-items: center;
+.keepAccounts .kaTypeList .kaType {
   margin-bottom: 25px;
-  font-size: 16px;
-}
-.monthlyBill .content > .header .date .arrow {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  margin-top: -3px;
-  margin-left: 9px;
-  border-top: 2px solid #121826;
-  border-left: 2px solid #121826;
-  transform: rotate(225deg);
-  transform-origin: center;
-  transition: all 0.3s;
-}
-.monthlyBill .content > .header .date .arrow.expand {
-  transform: translate(0, 2px) rotate(45deg);
-}
-.monthlyBill .twoLineOverview {
-  display: flex;
-  justify-content: space-between;
-  width: 250px;
-}
-.monthlyBill .twoLineOverview .item {
-  display: flex;
-  flex-direction: column;
-}
-.monthlyBill .twoLineOverview .item .money {
-  height: 24px;
-  line-height: 24px;
-  margin-bottom: 5px;
-  font-size: 18px;
-}
-.monthlyBill .twoLineOverview .item .type {
-  height: 14px;
-  line-height: 14px;
   font-size: 12px;
+  color: #333;
+}
+.keepAccounts .kaTypeList .kaType .title {
+  padding-left: 5px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: #808080;
+}
+.keepAccounts .kaTypeList .kaType .list {
+  display: flex;
+}
+.keepAccounts .kaTypeList .kaType .list .item {
+  width: 65px;
+  height: 65px;
+  padding: 9px 0;
+  margin-right: 7px;
+  text-align: center;
+  border: 0.5px solid #fff;
+}
+.keepAccounts .kaTypeList .kaType .list .item:last-child {
+  margin-right: 0;
+}
+.keepAccounts .kaTypeList .kaType .list .item .icon {
+  height: 25px;
+  line-height: 25px;
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+.keepAccounts .kaTypeList .kaType .list .item.selected {
+  border: 0.5px solid var(--ka-border-color);
+  border-radius: 5px;
+  background: var(--ka-bg-color);
+}
+.keepAccounts .btns {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+.keepAccounts .btns .btn {
+  width: 200px;
+  --border-width: 0;
+  --background-color: #fafafa;
+  --text-color: #616161;
+}
+.keepAccounts .btns .btn:first-child {
+  margin-right: 15px;
+}
+.keepAccounts .btns .btn.save {
+  --background-color: var(--ka-bg-color);
+  --text-color: var(--ka-color);
 }
 
 /*# sourceMappingURL=index.css.map */
