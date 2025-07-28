@@ -18,7 +18,6 @@
 .monthlyBill .content {
   height: 573px;
   padding: 0 10px;
-  flex: 1;
   overflow-y: scroll;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
@@ -28,9 +27,9 @@
 }
 .monthlyBill .content > .header {
   height: 135px;
-  padding: 20px 20px 0 18.5px;
+  padding: 20px 20px 0px 18.5px;
   margin-bottom: 10px;
-  background-color: orange;
+  background-image: url(https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/reactbase/ka/month-bg.png);
   background-size: 100% 100%;
 }
 .monthlyBill .content > .header .date {

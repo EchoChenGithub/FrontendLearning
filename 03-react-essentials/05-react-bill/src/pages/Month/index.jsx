@@ -1,16 +1,19 @@
 import { NavBar, DatePicker } from 'antd-mobile'
-import './index.scss'
+import './css/index.scss'
 import {useEffect, useMemo, useState} from "react";
 import classNames from "classnames";
 import dayjs from "dayjs";
 import {useDispatch, useSelector} from "react-redux";
 import _ from 'lodash'
 import { getBillList } from '@/store/modules/billStore'
+import DailyBill from "@/pages/Month/components/DailyBill";
+
 
 const Month = () => {
-    // 获取账单数据
-    const billList = useSelector(state => state.bill.billList)
-
+    // 获取所有的账单数据
+    const billList = useSelector(state => {
+        return state.bill.billList
+    })
     const dispatch = useDispatch();
     useEffect(() => {
         // 只有在这里，在组件渲染完成后，才能安全地触发副作用
@@ -22,7 +25,6 @@ const Month = () => {
         return _.groupBy(billList, (item)=>dayjs(item.date).format('YYYY-MM'))
     }, [billList])
 
-
     // 控制弹框的打开和关闭
     const [dateVisible, setDateVisible] = useState(false)
 
@@ -31,13 +33,14 @@ const Month = () => {
         return (dayjs(new Date()).format('YYYY-MM'))
     })
 
-    const [currentMonthList, setCurrentMonthList] = useState([])
-    console.log(currentMonthList)
-    useMemo(() => {
+    // 控制当月的账单数据
+    const [currentMonthData, setCurrentMonthData] = useState([])
+
+    const monthOverview = useMemo(() => {
         // 支出 / 收入 / 结余
-        const pay = currentMonthList.filter(item=>item.type === 'pay').reduce((acc, cur) =>
+        const pay = currentMonthData.filter(item=>item.type === 'pay').reduce((acc, cur) =>
            acc + cur.money, 0)
-        const income = currentMonthList.filter(item=>item.type === 'income').reduce((acc, cur) =>
+        const income = currentMonthData.filter(item=>item.type === 'income').reduce((acc, cur) =>
            acc + cur.money, 0)
         return {
             pay,
@@ -45,7 +48,17 @@ const Month = () => {
             total: pay + income,
         }
 
-    }, [currentMonthList])
+    }, [currentMonthData])
+
+    const dayGroup = useMemo(() => {
+        // return 计算之后的值
+        const groupData = _.groupBy(currentMonthData, (item)=>dayjs(item.date).format('MM-DD'))
+        const keys = Object.keys(groupData)
+        return {
+            groupData,
+            keys,
+        }
+    }, [currentMonthData])
 
     // 确认回调
     const onConfirm = (date) => {
@@ -54,7 +67,7 @@ const Month = () => {
         // 更新时间显示
         const formatDate = dayjs(date).format('YYYY-MM')
         setCurrentDate(formatDate)
-        setCurrentMonthList(monthGroup[formatDate])
+        setCurrentMonthData(monthGroup[formatDate]??[])
     }
 
     return (
@@ -74,15 +87,15 @@ const Month = () => {
                     {/* 统计区域 */}
                     <div className='twoLineOverview'>
                         <div className="item">
-                            <span className="money">{100}</span>
+                            <span className="money">{monthOverview.pay.toFixed(2)}</span>
                             <span className="type">支出</span>
                         </div>
                         <div className="item">
-                            <span className="money">{200}</span>
+                            <span className="money">{monthOverview.income.toFixed(2)}</span>
                             <span className="type">收入</span>
                         </div>
                         <div className="item">
-                            <span className="money">{200}</span>
+                            <span className="money">{monthOverview.total.toFixed(2)}</span>
                             <span className="type">结余</span>
                         </div>
                     </div>
@@ -98,6 +111,8 @@ const Month = () => {
                         max={new Date()}
                     />
                 </div>
+                {/*    单日列表统计  */}
+                {dayGroup.keys.map(key=>{return <DailyBill key={key} date={key} billList={dayGroup.groupData[key]} />})}
             </div>
         </div >
     )

@@ -1,0 +1,124 @@
+.dailyBill {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+.dailyBill .header {
+  --ka-text-color: #888c98;
+  padding: 15px 15px 10px 15px;
+}
+.dailyBill .header .dateIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 21px;
+  margin-bottom: 9px;
+}
+.dailyBill .header .dateIcon .arrow {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-top: -3px;
+  margin-left: 9px;
+  border-top: 2px solid #888c98;
+  border-left: 2px solid #888c98;
+  transform: rotate(225deg);
+  transform-origin: center;
+  transition: all 0.3s;
+}
+.dailyBill .header .dateIcon .arrow.expand {
+  transform: translate(0, 2px) rotate(45deg);
+}
+.dailyBill .header .dateIcon .date {
+  font-size: 14px;
+}
+.dailyBill .oneLineOverview {
+  display: flex;
+  justify-content: space-between;
+}
+.dailyBill .oneLineOverview .pay {
+  flex: 1;
+}
+.dailyBill .oneLineOverview .pay .type {
+  font-size: 10px;
+  margin-right: 2.5px;
+  color: #e56a77;
+}
+.dailyBill .oneLineOverview .pay .money {
+  color: var(--ka-text-color);
+  font-size: 13px;
+}
+.dailyBill .oneLineOverview .income {
+  flex: 1;
+}
+.dailyBill .oneLineOverview .income .type {
+  font-size: 10px;
+  margin-right: 2.5px;
+  color: #4f827c;
+}
+.dailyBill .oneLineOverview .income .money {
+  color: var(--ka-text-color);
+  font-size: 13px;
+}
+.dailyBill .oneLineOverview .balance {
+  flex: 1;
+  margin-bottom: 5px;
+  text-align: right;
+}
+.dailyBill .oneLineOverview .balance .money {
+  line-height: 17px;
+  margin-right: 6px;
+  font-size: 17px;
+}
+.dailyBill .oneLineOverview .balance .type {
+  font-size: 10px;
+  color: var(--ka-text-color);
+}
+.dailyBill .billList {
+  padding: 15px 10px 15px 15px;
+  border-top: 1px solid #ececec;
+}
+.dailyBill .billList .bill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 43px;
+  margin-bottom: 15px;
+}
+.dailyBill .billList .bill:last-child {
+  margin-bottom: 0;
+}
+.dailyBill .billList .bill .icon {
+  margin-right: 10px;
+  font-size: 25px;
+}
+.dailyBill .billList .bill .detail {
+  flex: 1;
+  padding: 4px 0;
+}
+.dailyBill .billList .bill .detail .billType {
+  display: flex;
+  align-items: center;
+  height: 17px;
+  line-height: 17px;
+  font-size: 14px;
+  padding-left: 4px;
+}
+.dailyBill .billList .bill .money {
+  font-size: 17px;
+}
+.dailyBill .billList .bill .money.pay {
+  color: #ff917b;
+}
+.dailyBill .billList .bill .money.income {
+  color: #4f827c;
+}
+
+.dailyBill.expand .header {
+  border-bottom: 1px solid #ececec;
+}
+.dailyBill.expand .billList {
+  display: block;
+}
+
+/*# sourceMappingURL=index.css.map */
