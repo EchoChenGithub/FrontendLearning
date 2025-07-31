@@ -1,11 +1,27 @@
 import './index.scss'
-import {Button, Card, Form, Input} from 'antd'
+import {Button, Card, Form, Input, message} from 'antd'
 import logo from '@/assets/logo.png'
+import {useDispatch} from "react-redux"
+import {fetchLogin} from "@/store/modules/userStore.jsx"
+import {useNavigate} from "react-router-dom"
 
 
 const Login = () => {
-    const onFinish = (values) => {
-        console.log(values)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const onFinish = async (values) => {
+        try {
+            // 触发异步 action fetchLogin
+            await dispatch(fetchLogin(values))
+            // 异步操作成功后，才执行以下逻辑
+            // 1. 跳转到首页
+            navigate('/')
+            // 2. 提示登录成功
+            message.success('登录成功')
+        } catch (error) {
+            console.error('登录失败（组件捕获）', error)
+            message.error(error || '登录失败，请检查手机号和验证码！')
+        }
     }
     return (
         <div className="login">
@@ -49,3 +65,4 @@ const Login = () => {
 }
 
 export default Login
+
