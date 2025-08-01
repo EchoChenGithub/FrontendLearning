@@ -3,6 +3,9 @@ import {createBrowserRouter, Navigate} from "react-router-dom";
 import Layout from "@/pages/Layout";
 import Login from "@/pages/Login"
 import {getLocalToken} from "@/utils/index.jsx";
+import Home from "@/pages/Layout/components/Home/index.jsx";
+import Article from "@/pages/Layout/components/Article/index.jsx";
+import Publish from "@/pages/Layout/components/Publish/index.jsx";
 
 // 定义 AuthGuard 函数：如果有 token，返回路由组件，如果没有则返回登录页面
 function AuthGuard({children}){
@@ -22,7 +25,27 @@ const router = createBrowserRouter([
             <AuthGuard>
                 <Layout />
             </AuthGuard>
-        )
+        ),
+        children:[
+            {
+                path: "home",
+                element:(
+                    <Home />
+                )
+            },
+            {
+                path: "publish",
+                element:(
+                    <Publish />
+                )
+            },
+            {
+                path: "article",
+                element:(
+                    <Article />
+                )
+            }
+        ]
     },
     {
         path: "/login",

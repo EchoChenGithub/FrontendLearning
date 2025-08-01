@@ -1,4 +1,4 @@
-import './index.scss'
+import styles from './index.module.scss'
 import {Button, Card, Form, Input, message} from 'antd'
 import logo from '@/assets/logo.png'
 import {useDispatch} from "react-redux"
@@ -24,8 +24,8 @@ const Login = () => {
         }
     }
     return (
-        <div className="login">
-            <Card className="login-container">
+        <div className={styles.login}>
+            <Card className={styles.loginContainer}>
                 <img className="login-logo" src={logo}  alt=""/>
                 {/*登录表单*/}
                 <Form onFinish={onFinish} validateTrigger="onBlur">
