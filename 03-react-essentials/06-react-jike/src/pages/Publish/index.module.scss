@@ -1,11 +1,14 @@
 .publish {
 
-
   .publishForm {
-    margin-top: 10px;
-
-    .publishBtn {
-      margin-left: 50px;
+    .publishQuill {
+      height:100px;
+      .ql-container {
+        height: calc(100% - 42px);
+        .ql-editor {
+          min-height: 100px;
+        }
+      }
     }
   }
 }

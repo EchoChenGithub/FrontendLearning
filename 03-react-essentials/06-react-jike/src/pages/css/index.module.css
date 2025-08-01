@@ -1,8 +1,11 @@
-.publish .publishForm {
-  margin-top: 10px;
+.publish .publishForm .publishQuill {
+  height: 100px;
 }
-.publish .publishForm .publishBtn {
-  margin-left: 50px;
+.publish .publishForm .publishQuill .ql-container {
+  height: calc(100% - 42px);
+}
+.publish .publishForm .publishQuill .ql-container .ql-editor {
+  min-height: 100px;
 }
 
 /*# sourceMappingURL=index.module.css.map */

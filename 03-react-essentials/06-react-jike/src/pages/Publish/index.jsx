@@ -1,5 +1,7 @@
-import {Breadcrumb, Button, Card, Form, Input, Select} from "antd"
+import {Breadcrumb, Button, Card, Form, Input, Select, Space} from "antd"
 import styles from './index.module.scss'
+import ReactQuill from "react-quill"
+import 'react-quill/dist/quill.snow.css'
 
 const Publish = () => {
     return (
@@ -51,7 +53,7 @@ const Publish = () => {
                         </Select>
                     </Form.Item>
                     <Form.Item
-                        lebel="封面："
+                        label="封面："
                         name="type"
                     >
                     </Form.Item>
@@ -65,8 +67,13 @@ const Publish = () => {
                         ]}
                     >
                         {/*    富文本编辑器*/}
+                        <ReactQuill className={styles.publishQuill} theme="snow" placeholder="请输入文章内容"/>
                     </Form.Item>
-                    <Button className={styles.publishBtn} type="primary">发布文章</Button>
+                    <Form.Item wrapperCol={{ offset: 4 }}>
+                        <Space>
+                            <Button size="large" type="primary" htmlType="submit">发布文章</Button>
+                        </Space>
+                    </Form.Item>
                 </Form>
             </Card>
 
