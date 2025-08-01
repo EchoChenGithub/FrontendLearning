@@ -1,7 +1,7 @@
 // 用户相关的状态管理
 
 import { createSlice } from "@reduxjs/toolkit";
-import {addLocalToken, getLocalToken, request} from "@/utils"
+import {addLocalToken, getLocalToken, removeLocalToken, request} from "@/utils"
 
 const userStore = createSlice({
     name: "user",
@@ -18,16 +18,21 @@ const userStore = createSlice({
         },
         setUserInfo: (state, action) => {
             state.userInfo = action.payload
+        },
+        clearUserInfo: (state) => {
+            state.token = ''
+            state.userInfo = {}
+            removeLocalToken()
         }
     }
 
 })
 
 // 解构 actionCreator
-const { setToken, setUserInfo } = userStore.actions;
+const { setToken, setUserInfo, clearUserInfo } = userStore.actions
 
 // 获取 reducer 函数
-const userReducer = userStore.reducer;
+const userReducer = userStore.reducer
 
 // 异步方法 完成登录获取 token
 const fetchLogin = (loginForm) => {
@@ -53,6 +58,6 @@ const  fetchUserInfo = () => {
 }
 
 
-export { fetchLogin, setToken, fetchUserInfo }
+export { fetchLogin, setToken, fetchUserInfo, clearUserInfo }
 
 export default userReducer;

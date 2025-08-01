@@ -2,19 +2,20 @@
 import {useEffect} from "react"
 
 import {request} from "@/utils/request.jsx"
-import {Layout, Menu} from "antd"
+import {Layout, Menu, Popconfirm} from "antd"
 import styles from "./index.module.scss"
 import {DiffOutlined, EditOutlined, HomeOutlined, LogoutOutlined} from "@ant-design/icons";
 import {Outlet, useLocation, useNavigate} from "react-router-dom"
 import {useDispatch, useSelector} from "react-redux";
-import {fetchUserInfo} from "@/store/modules/userStore.jsx";
+import {clearUserInfo, fetchUserInfo, setToken} from "@/store/modules/userStore.jsx";
+import {removeLocalToken} from "@/utils/index.jsx";
 
 const { Header, Content, Sider } = Layout
 
 const items = [
     {
         label: '首页',
-        key: '/home',
+        key: '/',
         icon: <HomeOutlined />,
     },
     {
@@ -51,6 +52,12 @@ const GeekLayout = () => {
     // 从 store 中获取用户信息
     const userName = useSelector(state => state.user.userInfo.name)
 
+    const onLogoutConfirm = () => {
+        // 1. 清空 token
+        dispatch(clearUserInfo())
+        // 2. 跳转到登录页
+        navigate('/login')
+    };
     return (
         <Layout>
             <Header className={styles.header}>
@@ -58,8 +65,14 @@ const GeekLayout = () => {
                 <div className={styles.userInfo}>
                     <span className={styles.userName}>{userName}</span>
                     <span className={styles.userLogout}>
-                        <LogoutOutlined />
-                        <span>退出</span>
+                        <Popconfirm
+                            title="确认退出吗？"
+                            okText="确认"
+                            cancelText="取消"
+                            onConfirm={onLogoutConfirm}>
+                            <LogoutOutlined />
+                            <span>退出</span>
+                        </Popconfirm>
                     </span>
                 </div>
             </Header>
