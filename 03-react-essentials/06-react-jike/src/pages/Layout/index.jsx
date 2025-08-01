@@ -4,11 +4,10 @@ import {useEffect} from "react"
 import {request} from "@/utils/request.jsx"
 import {Layout, Menu, Popconfirm} from "antd"
 import styles from "./index.module.scss"
-import {DiffOutlined, EditOutlined, HomeOutlined, LogoutOutlined} from "@ant-design/icons";
-import {Outlet, useLocation, useNavigate} from "react-router-dom"
-import {useDispatch, useSelector} from "react-redux";
-import {clearUserInfo, fetchUserInfo, setToken} from "@/store/modules/userStore.jsx";
-import {removeLocalToken} from "@/utils/index.jsx";
+import { DiffOutlined, EditOutlined, HomeOutlined, LogoutOutlined } from "@ant-design/icons";
+import { Outlet, useLocation, useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux";
+import { clearUserInfo, fetchUserInfo } from "@/store/modules/userStore.jsx";
 
 const { Header, Content, Sider } = Layout
 

@@ -7,7 +7,9 @@
 // 3. 请求拦截器/ 响应拦截器
 
 import axios from "axios";
-import {getLocalToken} from "@/utils/token.jsx";
+import {getLocalToken, removeLocalToken} from "@/utils/token.jsx"
+import router from "@/router/index.jsx";
+import {clearUserInfo} from "@/store/modules/userStore.jsx";
 
 const request = axios.create({
     baseURL: 'http://geek.itheima.net/v1_0',
@@ -35,6 +37,14 @@ request.interceptors.request.use((config) => {
  request.interceptors.response.use((response) => {
      return response.data
  }, (error) => {
+     // 监控 401
+     console.dir(error)
+     if (error.response.status === 401) {
+         // 1. 清空 token
+         removeLocalToken()
+         // 2. 跳转到登录页
+         window.location.reload()
+     }
      return Promise.reject(error)
  })
 
