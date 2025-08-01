@@ -2,6 +2,7 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 import {addLocalToken, getLocalToken, removeLocalToken, request} from "@/utils"
+import {getProfileAPI, loginAPI} from "@/apis/user.jsx";
 
 const userStore = createSlice({
     name: "user",
@@ -39,7 +40,7 @@ const fetchLogin = (loginForm) => {
     // 返回一个函数
     return async (dispatch) => {
         // 1. 发送异步请求
-        const res = await request.post("/authorizations", loginForm)
+        const res = await loginAPI(loginForm)
         // 2. 提交同步 action 进行 token 的存入
         dispatch(setToken(res.data.token))
         // 3. 把 token 存入 localStorage
@@ -51,7 +52,7 @@ const  fetchUserInfo = () => {
     // 返回一个函数
     return async (dispatch) => {
         // 1. 发送异步请求
-        const res = await request.get("/user/profile")
+        const res = await getProfileAPI()
         // 2. 提交同步 action 进行用户信息的存入
         dispatch(setUserInfo(res.data))
     }

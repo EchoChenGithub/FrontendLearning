@@ -1,35 +1,8 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
+.publish .publishForm {
+  margin-top: 10px;
 }
-.header .logo {
-  width: 200px;
-  height: 60px;
-  background: url("@/assets/logo.png") no-repeat center/160px auto;
-}
-.header .userInfo .userName {
-  margin-right: 20px;
-  color: #fff;
-}
-.header .userInfo .userLogout {
-  margin-right: 20px;
-  color: #fff;
-}
-.header .userInfo .userLogout span {
-  margin-left: 5px;
-}
-
-.layoutSider {
-  width: 200px;
-}
-.layoutSider .siderMenu {
-  background-color: #001529;
-}
-
-.layoutContent {
-  padding-left: 10px;
-  padding-top: 10px;
+.publish .publishForm .publishBtn {
+  margin-left: 50px;
 }
 
 /*# sourceMappingURL=index.module.css.map */

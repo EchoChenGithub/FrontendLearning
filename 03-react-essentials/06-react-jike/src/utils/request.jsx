@@ -1,15 +1,11 @@
 // axios 的封装处理
 
 // 1. 根域名配置
-
 // 2. 超时时间
-
 // 3. 请求拦截器/ 响应拦截器
 
 import axios from "axios";
 import {getLocalToken, removeLocalToken} from "@/utils/token.jsx"
-import router from "@/router/index.jsx";
-import {clearUserInfo} from "@/store/modules/userStore.jsx";
 
 const request = axios.create({
     baseURL: 'http://geek.itheima.net/v1_0',
