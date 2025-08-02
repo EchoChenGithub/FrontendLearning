@@ -2,8 +2,20 @@ import {Breadcrumb, Button, Card, Form, Input, Select, Space} from "antd"
 import styles from './index.module.scss'
 import ReactQuill from "react-quill"
 import 'react-quill/dist/quill.snow.css'
+import {getChannelListAPI} from "@/apis/article"
+import {useEffect, useState} from "react"
 
 const Publish = () => {
+    const [channelList, setChannelList] = useState([])
+
+    useEffect(() => {
+        const getChannelList = async () => {
+            const res = await getChannelListAPI()
+            setChannelList(res.data.channels)
+        }
+        getChannelList()
+    }, [])
+
     return (
         <div className={styles.publish}>
             <Card title={
@@ -49,7 +61,7 @@ const Publish = () => {
                         ]}
                     >
                         <Select placeholder="请选择文章频道" style={{width:400}}>
-                            <Select.Option value={0}>推荐</Select.Option>
+                            {channelList.map(item => <Select.Option key={item.id} value={item.id}>{item.name}</Select.Option>)}
                         </Select>
                     </Form.Item>
                     <Form.Item
@@ -59,7 +71,7 @@ const Publish = () => {
                     </Form.Item>
                     <Form.Item
                         label="内容："
-                        name="content"
+                        // name="content"
                         rules={[
                             {
                                 required: true,
