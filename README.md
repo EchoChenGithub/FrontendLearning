@@ -52,26 +52,26 @@
     *   [x] HTTP 基础与 AJAX (fetch API)
     *   [x] **练习项目2:** [百度外卖项目实战] - (https://github.com/EchoChenGithub/FrontendLearning/tree/main/00-portfolio-projects/baiduWM) [在线演示链接 (稍后部署)]
 
-### 第二阶段：框架学习与项目实践 (第4-7周)🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜ 20%
+### 第二阶段：框架学习与项目实践 (第4-7周)🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜ 68%
 *   **学习课程:** 黑马程序员前端React视频教程，react零基础入门原理详解到好客租房项目实战
-*   **课程进度** ███░░░░░░ 27%(45/165)
+*   **课程进度** ██████░░░░ 68%(112/165)
 *   **工具与版本控制:**
     *   [ ] Git 基础与 GitHub 协作流程
 *   **前端框架: React.js**
     *   [x] React 核心概念 (JSX, 组件, Props, State)
     *   [x] React Hooks (useState, useEffect, useContext 等)
-    *   [ ] 组件生命周期 (使用Hooks实现)
-    *   [ ] React Router (客户端路由)
+    *   [x] 组件生命周期 (使用Hooks实现)
+    *   [x] React Router (客户端路由)
     *   [ ] 状态管理 (例如: Context API 或 Zustand/Redux Toolkit 基础)
     *   [ ] React 中的 API 请求与数据交互
 *   **重点领域: 数据可视化**
-    *   [ ] [你选择的可视化库入门, 例如：Recharts, Nivo, 或 Chart.js]
+    *   [ ] ECharts 基础使用
     *   [ ] 创建不同类型的图表
     *   [ ] 与 React 组件集成
 *   **核心项目:**
-    *   [ ] **项目名称:** [例如：交互式经济数据看板]
-    *   [ ] **项目描述:** [简要描述你的项目想法]
-    *   [ ] **技术栈:** React, [你选择的可视化库], [其他工具]
+    *   [x] **项目名称:** 极客园
+    *   [x] **项目描述:** [简要描述你的项目想法]
+    *   [x] **技术栈:** React,  Echarts, React Router, Redux
     *   [ ] **GitHub仓库:** [项目GitHub仓库链接 (稍后创建)]
     *   [ ] **在线演示:** [在线演示链接 (稍后部署)]
 
