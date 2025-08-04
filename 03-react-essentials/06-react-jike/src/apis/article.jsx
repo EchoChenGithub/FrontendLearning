@@ -10,5 +10,14 @@ export function getChannelListAPI() {
     })
 }
 
+// 2. 提交文章列表
+
+export function createArticleAPI () {
+    return request({
+        url:"/mp/articles?draft=false",
+        method:"POST",
+        data  // Body参数
+    })
+}
 
 

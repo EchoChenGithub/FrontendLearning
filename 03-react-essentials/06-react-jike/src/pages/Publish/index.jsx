@@ -2,7 +2,7 @@ import {Breadcrumb, Button, Card, Form, Input, Select, Space} from "antd"
 import styles from './index.module.scss'
 import ReactQuill from "react-quill"
 import 'react-quill/dist/quill.snow.css'
-import {getChannelListAPI} from "@/apis/article"
+import {createArticleAPI, getChannelListAPI} from "@/apis/article"
 import {useEffect, useState} from "react"
 
 const Publish = () => {
@@ -15,6 +15,24 @@ const Publish = () => {
         }
         getChannelList()
     }, [])
+
+    // 提交表单
+    const onFinish = async (formValues) => {
+        console.log(formValues)
+        const {title, content, channel_id} = formValues
+        // 1. 按照接口文档的格式处理收集到的表单数据
+        const reqData = {
+            title: '',
+            content: '',
+            cover: {
+                type: 0,
+                images: []
+            },
+            channel_id: ''
+        }
+        // 2. 调用接口提交
+        createArticleAPI(reqData)
+    }
 
     return (
         <div className={styles.publish}>
@@ -37,6 +55,7 @@ const Publish = () => {
                     labelCol={{ span: 4 }}
                     wrapperCol={{ span: 16 }}
                     initialValues={{ type: 0 }}
+                    onFinish={onFinish}
                 >
                     <Form.Item
                         label="标题："
@@ -52,7 +71,7 @@ const Publish = () => {
                     </Form.Item>
                     <Form.Item
                         label="频道："
-                        name="channel"
+                        name="channel_id"
                         rules={[
                             {
                                 required: true,
@@ -66,12 +85,12 @@ const Publish = () => {
                     </Form.Item>
                     <Form.Item
                         label="封面："
-                        name="type"
+                        // name="type"
                     >
                     </Form.Item>
                     <Form.Item
                         label="内容："
-                        // name="content"
+                        name="content"
                         rules={[
                             {
                                 required: true,
@@ -88,7 +107,6 @@ const Publish = () => {
                     </Form.Item>
                 </Form>
             </Card>
-
         </div>
     )
 }

@@ -1,14 +1,16 @@
 .publish {
-
   .publishForm {
     .publishQuill {
       height:100px;
-      .ql-container {
-        height: calc(100% - 42px);
-        .ql-editor {
-          min-height: 100px;
+      :global {
+        .ql-container {
+          height: calc(100% - 42px);
+          .ql-editor {
+            min-height: 100px;
+          }
         }
       }
     }
   }
 }
+

@@ -1,10 +1,10 @@
 .publish .publishForm .publishQuill {
   height: 100px;
 }
-.publish .publishForm .publishQuill .ql-container {
+.publish .publishForm .publishQuill :global .ql-container {
   height: calc(100% - 42px);
 }
-.publish .publishForm .publishQuill .ql-container .ql-editor {
+.publish .publishForm .publishQuill :global .ql-container .ql-editor {
   min-height: 100px;
 }
 
