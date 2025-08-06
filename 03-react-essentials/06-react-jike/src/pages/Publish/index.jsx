@@ -1,9 +1,10 @@
-import {Breadcrumb, Button, Card, Form, Input, Select, Space} from "antd"
+import {Breadcrumb, Button, Card, Form, Input, Select, Space, Radio, Upload} from "antd"
 import styles from './index.module.scss'
 import ReactQuill from "react-quill"
 import 'react-quill/dist/quill.snow.css'
 import {createArticleAPI, getChannelListAPI} from "@/apis/article"
 import {useEffect, useState} from "react"
+import {PlusOutlined} from "@ant-design/icons";
 
 const Publish = () => {
     const [channelList, setChannelList] = useState([])
@@ -31,6 +32,18 @@ const Publish = () => {
         }
         // 2. 调用接口提交
         createArticleAPI(reqData)
+    }
+
+    // 上传图片回调
+    const [imageList, setImageList] = useState([])
+    const onUploadChange = (info) => {
+        setImageList(info.fileList)
+    }
+
+    // 切换图片封面类型
+    const [imageType, setImageType] = useState(0)
+    const onTypeChange = (e) => {
+        setImageType(e.target.value)
     }
 
     return (
@@ -82,11 +95,33 @@ const Publish = () => {
                             {channelList.map(item => <Select.Option key={item.id} value={item.id}>{item.name}</Select.Option>)}
                         </Select>
                     </Form.Item>
-                    {/*<Form.Item*/}
-                    {/*    label="封面："*/}
-                    {/*    // name="type"*/}
-                    {/*>*/}
-                    {/*</Form.Item>*/}
+                    <Form.Item label="封面：">
+                        <Form.Item name="type">
+                            <Radio.Group onChange={onTypeChange}
+                                         options={[
+                                             {value: 1, label: '单图'},
+                                             {value: 3, label: '三图'},
+                                             {value: 0, label: '无图'}
+                                         ]}>
+                            </Radio.Group>
+                        </Form.Item>
+
+                        {imageType > 0 && <Upload
+                            name="image"  // 必须与接口里规定的参数同名
+                            listType="picture-card"
+                            className="image-uploader"
+                            showUploadList
+                            action="http://geek.itheima.net/v1_0/upload"  // 上传的接口
+                            // beforeUpload={beforeUpload}
+                            onChange={onUploadChange}
+                            maxCount={imageType}
+                        >
+                            <div style={{marginTop: 8}}>
+                                <PlusOutlined />
+                            </div>
+                        </Upload>}
+
+                    </Form.Item>
                     <Form.Item
                         label="内容："
                         name="content"

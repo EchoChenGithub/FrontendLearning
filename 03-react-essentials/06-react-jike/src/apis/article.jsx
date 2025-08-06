@@ -11,7 +11,6 @@ export function getChannelListAPI() {
 }
 
 // 2. 提交文章列表
-
 export function createArticleAPI (data) {
     console.log(data)
     return request({
