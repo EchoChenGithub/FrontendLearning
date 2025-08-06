@@ -18,17 +18,16 @@ const Publish = () => {
 
     // 提交表单
     const onFinish = async (formValues) => {
-        console.log(formValues)
         const {title, content, channel_id} = formValues
         // 1. 按照接口文档的格式处理收集到的表单数据
         const reqData = {
-            title: '',
-            content: '',
+            title,
+            content,
             cover: {
                 type: 0,
                 images: []
             },
-            channel_id: ''
+            channel_id
         }
         // 2. 调用接口提交
         createArticleAPI(reqData)
@@ -83,11 +82,11 @@ const Publish = () => {
                             {channelList.map(item => <Select.Option key={item.id} value={item.id}>{item.name}</Select.Option>)}
                         </Select>
                     </Form.Item>
-                    <Form.Item
-                        label="封面："
-                        // name="type"
-                    >
-                    </Form.Item>
+                    {/*<Form.Item*/}
+                    {/*    label="封面："*/}
+                    {/*    // name="type"*/}
+                    {/*>*/}
+                    {/*</Form.Item>*/}
                     <Form.Item
                         label="内容："
                         name="content"

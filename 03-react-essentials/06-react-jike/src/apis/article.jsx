@@ -12,7 +12,8 @@ export function getChannelListAPI() {
 
 // 2. 提交文章列表
 
-export function createArticleAPI () {
+export function createArticleAPI (data) {
+    console.log(data)
     return request({
         url:"/mp/articles?draft=false",
         method:"POST",
