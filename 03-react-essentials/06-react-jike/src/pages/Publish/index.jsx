@@ -1,4 +1,4 @@
-import {Breadcrumb, Button, Card, Form, Input, Select, Space, Radio, Upload} from "antd"
+import {Breadcrumb, Button, Card, Form, Input, Select, Space, Radio, Upload, message} from "antd"
 import styles from './index.module.scss'
 import ReactQuill from "react-quill"
 import 'react-quill/dist/quill.snow.css'
@@ -19,14 +19,19 @@ const Publish = () => {
 
     // 提交表单
     const onFinish = async (formValues) => {
+        if (imageList.length !== imageType) {
+            message.error('请上传指定数量的图片')
+            return
+        }
+
         const {title, content, channel_id} = formValues
         // 1. 按照接口文档的格式处理收集到的表单数据
         const reqData = {
             title,
             content,
             cover: {
-                type: 0,
-                images: []
+                type: imageType,
+                images: imageList.map(item => item.response.data.url)
             },
             channel_id
         }
