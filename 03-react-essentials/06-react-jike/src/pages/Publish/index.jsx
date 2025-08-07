@@ -5,13 +5,14 @@ import 'react-quill/dist/quill.snow.css'
 import {createArticleAPI, getArticleByIdAPI} from "@/apis/article"
 import {useEffect, useState} from "react"
 import {PlusOutlined} from "@ant-design/icons";
-import {useChannel} from "@/hooks/useChannel.jsx";
-import {useSearchParams} from "react-router-dom";
+import {useChannel} from "@/hooks/useChannel.jsx"
+import {useSearchParams} from "react-router-dom"
 
 const Publish = () => {
-    // 获取频道列表
+    // 频道列表
     const {channelList} = useChannel()
-
+    // 获取实例
+    const [form] = Form.useForm()
     // 提交表单
     const onFinish = async (formValues) => {
         if (imageList.length !== imageType) {
@@ -40,16 +41,17 @@ const Publish = () => {
     }
 
     // 切换图片封面类型
-    const [imageType, setImageType] = useState(0)
-    const onTypeChange = (e) => {
-        setImageType(e.target.value)
-    }
+    // const [imageType, setImageType] = useState(0)
+    // const onTypeChange = (e) => {
+    //     setImageType(e.target.value)
+    // }
+
+    const currentImageType = Form.useWatch('type', form)
 
     // 回填数据
     const [searchParams, setSearchParams] = useSearchParams()
     const articleId = searchParams.get('id')  // 从当前的 URL 中获取 id 参数的值
-    // 获取实例
-    const [form] = Form.useForm()
+
 
     useEffect(() => {
         // 1. 通过 id 获取数据
@@ -60,7 +62,6 @@ const Publish = () => {
                 ...res.data,
                 type: res.data.cover.type,
             })
-            setImageType(res.data.cover.type)
             setImageList(res.data.cover.images.map(item => ({url: item})))
         }
         getArticleDetail()
@@ -119,7 +120,7 @@ const Publish = () => {
                     </Form.Item>
                     <Form.Item label="封面：">
                         <Form.Item name="type">
-                            <Radio.Group onChange={onTypeChange}
+                            <Radio.Group
                                          options={[
                                              {value: 1, label: '单图'},
                                              {value: 3, label: '三图'},
@@ -128,7 +129,7 @@ const Publish = () => {
                             </Radio.Group>
                         </Form.Item>
 
-                        {imageType > 0 && <Upload
+                        {currentImageType > 0 && <Upload
                             name="image"  // 必须与接口里规定的参数同名
                             listType="picture-card"
                             className="image-uploader"
@@ -136,7 +137,7 @@ const Publish = () => {
                             action="http://geek.itheima.net/v1_0/upload"  // 上传的接口
                             // beforeUpload={beforeUpload}
                             onChange={onUploadChange}
-                            maxCount={imageType}
+                            maxCount={currentImageType}
                             fileList={imageList}
                         >
                             <div style={{marginTop: 8}}>
