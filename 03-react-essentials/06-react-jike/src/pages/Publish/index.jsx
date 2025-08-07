@@ -2,8 +2,8 @@ import {Breadcrumb, Button, Card, Form, Input, Select, Space, Radio, Upload, mes
 import styles from './index.module.scss'
 import ReactQuill from "react-quill"
 import 'react-quill/dist/quill.snow.css'
-import {createArticleAPI, getChannelListAPI} from "@/apis/article"
-import {useEffect, useState} from "react"
+import {createArticleAPI} from "@/apis/article"
+import {useState} from "react"
 import {PlusOutlined} from "@ant-design/icons";
 import {useChannel} from "@/hooks/useChannel.jsx";
 

@@ -1,16 +1,53 @@
-import {Breadcrumb, Button, Card, DatePicker, Form, Popconfirm, Radio, Select, Table} from "antd"
+import {Breadcrumb, Button, Card, DatePicker, Form, Popconfirm, Radio, Select, Table, Space, Tag} from "antd"
 import styles from "./index.module.scss"
 // 引入汉化包。让时间选择器显示中文
 import dayjs from "dayjs"
 import {DeleteOutlined, EditOutlined} from "@ant-design/icons"
 import {useChannel} from "@/hooks/useChannel.jsx";
+import {deleteArticleAPI, getArticleListAPI} from "@/apis/article.jsx";
+import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 dayjs.locale("zh_CN")
 
 const {RangePicker} = DatePicker
 
 const Article = () => {
     const {channelList} = useChannel()
+    const [reqData, setReqData] = useState({
+        status: '',
+        channel_id: '',
+        begin_pubdate: '',
+        end_pubdate: '',
+        page: 1,
+        per_page: 4,
+    })
+    const navigate = useNavigate();
+    // 获取文章列表
+    const [articleList, setArticleList] = useState([])
+    const [count, setCount] = useState(0)
+    useEffect(() => {
+        const getArticleList = async () => {
+            const res = await getArticleListAPI(reqData)
+            setArticleList(res.data.results)
+            setCount(res.data.total_count)
+        }
+        getArticleList()
+    }, [reqData])
 
+    // 点击确认删除文章
+    const onConfirm = async (data) => {
+        await deleteArticleAPI(data.id)
+        // 更新文章列表
+        setReqData({
+            ...reqData
+        })
+    }
+
+    // 定义状态枚举
+    const status = {
+        1: <Tag color='warning'> 待审核 </Tag>,
+        2: <Tag color='success'> 审核通过 </Tag>,
+    }
     const columns = [
         {
             title: '封面',
@@ -75,6 +112,19 @@ const Article = () => {
         }
     ]
 
+    // 筛选功能
+    // 获取当前的表单数据
+    const onFinish = (values) => {
+        // console.log(values)
+        setReqData({
+            ...reqData,
+            channel_id: values.channel_id,
+            begin_pubdate: values.date[0].format('YYYY-MM-DD'),
+            end_pubdate: values.date[1].format('YYYY-MM-DD'),
+            status: values.status,
+        })
+    }
+
     return (
         <div>
             <Card
@@ -93,6 +143,8 @@ const Article = () => {
                 className={styles.articleCard}
             >
                 <Form
+                    initialValues={{status:'',channel_id:'',begin_pubdate:'',end_pubdate:''}}
+                    onFinish={onFinish}
                     >
                     <Form.Item label="状态：" name="status">
                         <Radio.Group
@@ -117,8 +169,20 @@ const Article = () => {
                 </Form>
             </Card>
             {/*表格区域*/}
-            <Card title={'根据筛选条件共查询到 count 条结果：'}>
-                <Table rowKey="id" columns={columns} ></Table>
+            <Card title={`根据筛选条件共查询到${count}条结果：`}>
+                <Table rowKey="id" columns={columns} dataSource={articleList} pagination={
+                    {
+                        total: count,
+                        current: reqData.page,
+                        pageSize: reqData.per_page,
+                        onChange: (page) => {
+                            setReqData({
+                                ...reqData,
+                                page,
+                            })
+                        }
+                    }
+                }></Table>
             </Card>
         </div>
     )
