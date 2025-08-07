@@ -1,11 +1,5 @@
-.publish .publishForm .publishQuill {
-  height: 100px;
-}
-.publish .publishForm .publishQuill :global .ql-container {
-  height: calc(100% - 42px);
-}
-.publish .publishForm .publishQuill :global .ql-container .ql-editor {
-  min-height: 100px;
+.articleCard {
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=index.module.css.map */
