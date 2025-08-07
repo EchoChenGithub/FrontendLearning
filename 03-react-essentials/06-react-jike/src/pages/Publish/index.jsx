@@ -2,10 +2,11 @@ import {Breadcrumb, Button, Card, Form, Input, Select, Space, Radio, Upload, mes
 import styles from './index.module.scss'
 import ReactQuill from "react-quill"
 import 'react-quill/dist/quill.snow.css'
-import {createArticleAPI} from "@/apis/article"
-import {useState} from "react"
+import {createArticleAPI, getArticleByIdAPI} from "@/apis/article"
+import {useEffect, useState} from "react"
 import {PlusOutlined} from "@ant-design/icons";
 import {useChannel} from "@/hooks/useChannel.jsx";
+import {useSearchParams} from "react-router-dom";
 
 const Publish = () => {
     // 获取频道列表
@@ -44,6 +45,28 @@ const Publish = () => {
         setImageType(e.target.value)
     }
 
+    // 回填数据
+    const [searchParams, setSearchParams] = useSearchParams()
+    const articleId = searchParams.get('id')  // 从当前的 URL 中获取 id 参数的值
+    // 获取实例
+    const [form] = Form.useForm()
+
+    useEffect(() => {
+        // 1. 通过 id 获取数据
+        const getArticleDetail = async () => {
+            const res = await getArticleByIdAPI(articleId)
+            console.log(res.data)
+            form.setFieldsValue({
+                ...res.data,
+                type: res.data.cover.type,
+            })
+            setImageType(res.data.cover.type)
+            setImageList(res.data.cover.images.map(item => ({url: item})))
+        }
+        getArticleDetail()
+        }, [articleId, form])
+
+
     return (
         <div className={styles.publish}>
             <Card title={
@@ -66,6 +89,7 @@ const Publish = () => {
                     wrapperCol={{ span: 16 }}
                     initialValues={{ type: 0 }}
                     onFinish={onFinish}
+                    form={form}
                 >
                     <Form.Item
                         label="标题："
@@ -113,6 +137,7 @@ const Publish = () => {
                             // beforeUpload={beforeUpload}
                             onChange={onUploadChange}
                             maxCount={imageType}
+                            fileList={imageList}
                         >
                             <div style={{marginTop: 8}}>
                                 <PlusOutlined />
