@@ -2,7 +2,7 @@ import {Breadcrumb, Button, Card, Form, Input, Select, Space, Radio, Upload, mes
 import styles from './index.module.scss'
 import ReactQuill from "react-quill"
 import 'react-quill/dist/quill.snow.css'
-import {createArticleAPI, getArticleByIdAPI} from "@/apis/article"
+import {createArticleAPI, getArticleByIdAPI, updateArticleAPI} from "@/apis/article"
 import {useEffect, useState} from "react"
 import {PlusOutlined} from "@ant-design/icons";
 import {useChannel} from "@/hooks/useChannel.jsx"
@@ -15,7 +15,7 @@ const Publish = () => {
     const [form] = Form.useForm()
     // 提交表单
     const onFinish = async (formValues) => {
-        if (imageList.length !== imageType) {
+        if (imageList.length !== currentImageType) {
             message.error('请上传指定数量的图片')
             return
         }
@@ -25,13 +25,25 @@ const Publish = () => {
             title,
             content,
             cover: {
-                type: imageType,
-                images: imageList.map(item => item.response.data.url)
+                type: currentImageType,
+                images: imageList.map((item) => {
+                    if (item.response) {
+                        return imageList.map(item => item.response.data.url)
+                    } else {
+                        return item.url
+                    }
+                })
             },
             channel_id
         }
         // 2. 调用接口提交
-        createArticleAPI(reqData)
+        if (articleId) {
+            // 编辑文章
+            await updateArticleAPI({...reqData, id: articleId})
+        } else {
+            // 发布文章
+            await createArticleAPI(reqData)
+        }
     }
 
     // 上传图片回调
@@ -64,7 +76,10 @@ const Publish = () => {
             })
             setImageList(res.data.cover.images.map(item => ({url: item})))
         }
-        getArticleDetail()
+        // 只有有 id 的时候才调用函数
+        if (articleId) {
+            getArticleDetail()
+        }
         }, [articleId, form])
 
 
@@ -78,7 +93,7 @@ const Publish = () => {
                             href: '/',
                         },
                         {
-                            title: '发布文章',
+                            title: articleId ? '编辑文章' : '发布文章',
                         }
                     ]}
                 />
