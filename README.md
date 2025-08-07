@@ -112,7 +112,8 @@
 ## 📝 学习笔记与心得
 
 我计划在这里记录每日/每周的学习简报或笔记：
-*   <!-- 新的日志会添加到这里 -->
+*   **week10-day5 的学习简报 (2025-08-08):** [极客园项目：布局、路由与高级表单集成以及 JS 打包和工程化知识](./learning_logs/week10-day5.md)
+*   ......
 *   **week7-day1 的学习简报 (2025-07-08):** [JS异步深度探索：从零完整实现一个Promise](./learning_logs/week7-day1.md)
 *   **week6-day6 的学习简报 (2025-07-05):** [React实践：从CRA项目迁移到Vite，项目结构重组，并掌握react三大组件通信模式](./learning_logs/week6-day6.md)
 *   **week6-day5 的学习简报 (2025-07-04):** [深度探索：从JS编译原理到React现代化工程实践的完整纪实](./learning_logs/week6-day5.md)
