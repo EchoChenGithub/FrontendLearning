@@ -3,11 +3,14 @@ import styles from "./index.module.scss"
 // 引入汉化包。让时间选择器显示中文
 import dayjs from "dayjs"
 import {DeleteOutlined, EditOutlined} from "@ant-design/icons"
+import {useChannel} from "@/hooks/useChannel.jsx";
 dayjs.locale("zh_CN")
 
 const {RangePicker} = DatePicker
 
 const Article = () => {
+    const {channelList} = useChannel()
+
     const columns = [
         {
             title: '封面',
@@ -101,7 +104,8 @@ const Article = () => {
                         </Radio.Group>
                     </Form.Item>
                     <Form.Item label="频道：" name="channel_id">
-                        <Select placeholder="Lucy" style={{width:100}}>
+                        <Select placeholder="请选择频道列表" defaultValue="Lucy" style={{width:120}}>
+                            {channelList.map(item =><Select.Option key={item.id} value={item.id}>{item.name}</Select.Option>)}
                         </Select>
                     </Form.Item>
                     <Form.Item label="日期：" name="date">

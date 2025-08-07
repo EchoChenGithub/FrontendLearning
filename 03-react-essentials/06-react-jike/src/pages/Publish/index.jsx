@@ -5,17 +5,11 @@ import 'react-quill/dist/quill.snow.css'
 import {createArticleAPI, getChannelListAPI} from "@/apis/article"
 import {useEffect, useState} from "react"
 import {PlusOutlined} from "@ant-design/icons";
+import {useChannel} from "@/hooks/useChannel.jsx";
 
 const Publish = () => {
-    const [channelList, setChannelList] = useState([])
-
-    useEffect(() => {
-        const getChannelList = async () => {
-            const res = await getChannelListAPI()
-            setChannelList(res.data.channels)
-        }
-        getChannelList()
-    }, [])
+    // 获取频道列表
+    const {channelList} = useChannel()
 
     // 提交表单
     const onFinish = async (formValues) => {
@@ -23,7 +17,6 @@ const Publish = () => {
             message.error('请上传指定数量的图片')
             return
         }
-
         const {title, content, channel_id} = formValues
         // 1. 按照接口文档的格式处理收集到的表单数据
         const reqData = {
